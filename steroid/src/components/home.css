@@ -1,0 +1,87 @@
+.home .header {
+    background-color: #7051f4;
+    background-image: 
+        linear-gradient(transparent, transparent calc(100% - 2px), #7b5ff55d calc(100% - 2px), #7b5ff5 100%), /* Horizontal lines with 2px border */
+        linear-gradient(90deg, transparent, transparent calc(100% - 2px), #7b5ff55d calc(100% - 2px), #7b5ff5 100%); /* Vertical lines with 2px border */
+    background-size: 120px 100px; /* Size of the rectangles */
+    background-position: 0 13vh; /* Start the grid from the bottom of .title */
+    width: 93%;
+    margin-left: 3.5%;
+    height: calc(140vh - 13vh); /* Adjust height to not overlap .title */
+    margin-top: 0;
+    padding: 0;
+}
+
+ .title {
+    margin: 0;
+    padding: 0;
+    background-color: #7051f4;
+    border-bottom: 2px solid #7b5ff5;
+    border-radius: 20px 20px 0px 0px;
+    background-image: none; /* No grid background on the title */
+    position: sticky; /* Sticks to the top when scrolled to */
+    top: 0; /* Start sticking when it reaches the top */
+    z-index: 1000; /* Ensure it stays above other elements when sticking */
+    width: 93%;
+    margin-left: 3.5%;
+    height: 13vh;
+
+}
+.title .nav {
+    float: right;
+    margin-right: 10vw;
+    margin-top: 3.5vh;
+}
+
+.title .nav a {
+    margin-right: 2.5vw;
+    font-size: calc(.5vw + .5em);
+    color: white;
+    font-family: "Poppins", Sans-serif;
+    text-decoration: none;
+}
+.title img {
+    margin-top: 5vh;
+    margin-left: 3vw;
+}
+
+.home .header .content img {
+    width: 47vw;
+    margin-left: 5vw;
+    margin-top: 16vh;
+    position: absolute;
+}
+
+.home .header .content .text {
+    float: right;
+    margin-right: 1vw;
+    margin-top: 34vh;
+}
+
+.home .header .content .text button {
+    background-color: white;
+    width: 14vw;
+    height: 7vh;
+    font-size: calc(.5em + .5vw);
+    border-radius: 10px;
+    border: none;
+}
+
+.home .content .text a {
+    color: white;
+    font-weight: bold;
+    margin-left: 2vw;
+}
+
+.home .content .text h1 {
+    width: 40vw;
+    font-size: calc(1.4vw + 1.4em);
+    color: white;
+    line-height: 7vh;
+    font-weight: bolder;
+
+}
+
+.home .content h1 span {
+    color: #232230D1;
+}

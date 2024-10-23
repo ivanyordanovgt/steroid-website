@@ -1,0 +1,53 @@
+.cart-products {
+    position: relative;
+    margin-left: 7vw; /* Center the cart products section */
+    background-color: white;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    padding-left: 5vw;
+    width: 50vw;
+}
+
+.cart-products .cart-product {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center items */
+    width: 90%; /* Set width of the cart product */
+    margin: 10px 0; /* Add some space between products */
+    border-bottom: 1px solid #ddd; /* Optional: Add a border to separate products */
+    padding: 10px 0; /* Optional: Add padding */
+}
+
+.cart-products .cart-product img {
+    width: 4vw; /* Set image size */
+    margin-right: 2vw; /* Space between image and title */
+}
+
+.cart-products .cart-product h1 {
+    font-size: calc(.5vw + .5em); /* Font size */
+    font-weight: 200; /* Font weight */
+    color: rgb(111, 81, 244); /* Text color */
+    margin: 0; /* Remove default margin */
+}
+
+.cart-products .cart-product h2,
+.cart-products .cart-product h3 {
+    margin-left: 5vw; /* Add space to the left of price and quantity */
+    margin: 0; /* Remove default margin */
+}
+
+.cart-products .cart-product h2 {
+    font-size: calc(.5vw + .5em);
+    font-weight: 200;
+    margin-left: 3vw;
+}
+
+.cart-products .cart-product h1 span {
+    color: black;
+    padding-right: 1vw;
+    font-weight: 900;
+    font-size: calc(.7em + .7vw);
+}
+
+.cart-products .cart-product input {
+    margin-left: 3vw;
+}

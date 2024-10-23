@@ -1,0 +1,71 @@
+.info-boxes {
+    display: flex; /* Use flexbox to align items in a row */
+    gap: 3vw; /* Adds 5vw space between the boxes */
+    margin-left: 5vw;
+    margin-top: 5vh;
+
+  }
+  
+  .info-box {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    width: 25vw; /* Fixed width for each box */
+    height: 20vh;
+    background-color: #e8dcfc;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+  }
+  
+  
+  .info-box-content {
+    display: flex; /* Use flex to align image and text side by side */
+    align-items: center; /* Vertically center the items */
+    justify-content: flex-start; /* Align items to the left */
+    gap: 10px; /* Space between image and text */
+
+  }
+  
+  .info-box img {
+    width: 50px;
+    height: 50px;
+    float: left;
+  }
+
+  .info-box .box-title {
+    margin-left: 10%;
+  }
+  
+  .info-box h3, .info-box p {
+    margin: 0;
+  }
+  
+  .info-box h3 {
+    font-size: calc(.8vw + .8em);
+    margin-bottom: 5px;
+    margin-top: 1.2vh;
+    margin-left: 4.5vw;
+    text-transform: uppercase;
+  }
+  
+  .info-box p {
+    font-size: 1em;
+    color: #666;
+    margin-top: 2vh;
+    width: 80%;
+    margin-left: 10%;
+  }
+  
+  /* Optional: Responsive design to handle smaller screens */
+  @media (max-width: 768px) {
+    .info-boxes {
+      align-items: center;
+    }
+  
+    .info-box {
+      width: 90%; /* Make the boxes smaller on mobile */
+    }
+  }
+  

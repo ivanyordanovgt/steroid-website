@@ -1,0 +1,46 @@
+.arrow-menu .menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  margin-left: 15%;
+}
+
+.arrow-menu {
+  width: 80%;
+  background-color: #e5e0ff;
+  gap: 10px;
+  text-align: center;
+  margin-left: 10%;
+  padding-top: 5vh;
+}
+
+.arrow-menu img {
+  width: 4.5vw;
+}
+
+.arrow-menu .menu-text {
+  font-size: 20px;
+  transition: opacity 0.3s ease-in-out;
+  padding-bottom: 7vh;
+  height: 30vh;
+}
+
+.arrow-menu .fade-in {
+  opacity: 1;
+}
+
+.arrow-menu .fade-out {
+  opacity: 0;
+}
+
+.arrow-menu .arrow-btn {
+  font-size: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.arrow-menu .menu-container p {
+}
+
