@@ -36,10 +36,13 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/products" element={<ShopProducts addToCart={addToCart}/>} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/check-cart" element={<CheckCart shoppingCartItems={shoppingCartItems}/>} />
+        <Route path="/check-cart" element={<CheckCart shoppingCartItems={shoppingCartItems} setShoppingCartItems={setShoppingCartItems}/>} />
         <Route path="/my-account" element={<MyAccount userProps={{user: 'testUser'}}/>} user={"user"}></Route>
       </Routes>
+
+      <h1>Footer</h1>
     </Router>
+    
   );
 }
 
