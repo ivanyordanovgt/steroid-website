@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
-import MyAccount from "./components/MyAccount";
 import Contact from "./components/Contact";
 import './App.css';
 import ShopProducts from "./components/ShopProducts";
 import ShoppingCart from "./components/ShoppingCart";
 import CheckCart from "./components/CheckCart";
+import MyAccount from "./components/MyAccount/MyAccount";
 
 function App() {
   const [shoppingCartItems, setShoppingCartItems] = useState([]);
@@ -36,10 +36,10 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<ShopProducts addToCart={addToCart} />} />
+        <Route path="/products" element={<ShopProducts addToCart={addToCart}/>} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/check-cart" element={<CheckCart shoppingCartItems={shoppingCartItems}/>} />
-        <Route path="/my-account" element={<MyAccount/>} user={"user"}></Route>
+        <Route path="/my-account" element={<MyAccount userProps={{user: 'testUser'}}/>} user={"user"}></Route>
       </Routes>
     </Router>
   );
