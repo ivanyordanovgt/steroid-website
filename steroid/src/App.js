@@ -13,6 +13,11 @@ function App() {
   const addToCart = (item) => {
     setShoppingCartItems((prevItems) => [...prevItems, item]);
   }
+  // const userData = db.get('user/data')
+  const userData = {
+    user: 'testUser', 
+    orders: ['testOrder1', 'testOrder2']
+  }
 
   return (
     <Router>
@@ -37,7 +42,7 @@ function App() {
         <Route path="/products" element={<ShopProducts addToCart={addToCart}/>} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/check-cart" element={<CheckCart shoppingCartItems={shoppingCartItems}/>} />
-        <Route path="/my-account" element={<MyAccount userProps={{user: 'testUser'}}/>} user={"user"}></Route>
+        <Route path="/my-account" element={<MyAccount accountProps={userData}/>}></Route>
       </Routes>
     </Router>
   );

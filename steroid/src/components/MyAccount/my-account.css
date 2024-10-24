@@ -36,9 +36,6 @@
 
 .my-account-container .sidebar ul li {
     margin: 10px 0;
-}
-
-.my-account-container .sidebar ul li a {
     text-decoration: none;
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -46,12 +43,16 @@
     transition: 0.3s;
 }
 
-.my-account-container .sidebar ul li a:hover {
+.my-account-container .sidebar .hovered {
     background-color: #7a49db;
     color: white;
     border-radius: 10px;
 }
 
+
+.my-account-container .content .sidebar ul li{
+    
+}
 /* Content area */
 .my-account-container .content {
     padding: 20px;
@@ -77,10 +78,41 @@
 }
 
 .my-account-container .content .content-section .wrapper .dashboard-link {
-    padding: 20px;
     width: 100%;
     background-color: #f9f9f9;
     border-radius: 0 15px 15px 0;
+}
+
+#account .wrapper form{
+    display: flex;
+    flex-direction: column;
+}
+
+#account .wrapper form input{
+    padding: 15px;
+}
+
+#account .wrapper form label{
+    margin-top: 15px;
+}
+
+#form-span{
+    font-weight: 900;
+    margin-top: 5vh;
+    color: #372580;
+}
+
+#account .wrapper form button{
+    background-color: #6b4cf8;
+    margin-left: 1%;
+    height: 5vh;
+    color: white;
+    font-size: calc(.55vw + .55em);
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    align-items: flex-start;
+    width: 15vw;
 }
 
 #address-h2 {
@@ -91,12 +123,12 @@
 
 #payment-span {
     display: flex;
-    justify-content: center;  /* Horizontal centering */
     align-items: center;  
     background-color: #cad8f1;;
     border-radius: 15px;
     padding: 0 4vw;
     height: 8vh;
+    width: 100%;
 }
 
 #add-payment-button{
