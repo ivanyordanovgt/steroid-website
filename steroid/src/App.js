@@ -39,7 +39,7 @@ function App() {
         <Route path="/products" element={<ShopProducts addToCart={addToCart} />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/check-cart" element={<CheckCart shoppingCartItems={shoppingCartItems}/>} />
-        <Route path="/my-account" element={<MyAccount/>}></Route>
+        <Route path="/my-account" element={<MyAccount/>} user={"user"}></Route>
       </Routes>
     </Router>
   );

@@ -1,9 +1,27 @@
 .my-account-container {
     display: flex;
+    flex-direction: column;
+    width: 93%;
+    align-content: space-around;
+    margin-left: 3.5%;
+    margin-top: 5vh;
+}
+
+.my-account-container .title-span{
+    font-size: 50px;
+    font-weight: 900;
+    color: #372580;
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+.my-account-container .main-content{
+    display: flex;
+    justify-content: space-around;
 }
 
 /* Style the sidebar */
-.side-bar {
+.my-account-container .sidebar {
     width: 200px;
     background-color: #e6e6fa;
     border-radius: 15px 0 0 15px;
@@ -11,16 +29,16 @@
 }
 
 /* Sidebar links */
-.side-bar ul {
+.my-account-container .sidebar ul {
     list-style-type: none;
     padding: 0;
 }
 
-.side-bar ul li {
+.my-account-container .sidebar ul li {
     margin: 10px 0;
 }
 
-.side-bar ul li a {
+.my-account-container .sidebar ul li a {
     text-decoration: none;
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -28,18 +46,63 @@
     transition: 0.3s;
 }
 
-.side-bar ul li a:hover {
+.my-account-container .sidebar ul li a:hover {
     background-color: #7a49db;
     color: white;
     border-radius: 10px;
 }
 
 /* Content area */
-.my-account-content {
+.my-account-container .content {
     padding: 20px;
     width: 100%;
     background-color: #f9f9f9;
     border-radius: 0 15px 15px 0;
+}
+
+.my-account-container .content .content-section #orders-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4vw;
+    height: 4vh;
+    background-color: #cad8f1;;
+    border-radius: 25px;
+}
+
+.my-account-container .content .content-section #payment-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.my-account-container .content .content-section .wrapper .dashboard-link {
+    padding: 20px;
+    width: 100%;
+    background-color: #f9f9f9;
+    border-radius: 0 15px 15px 0;
+}
+
+#address-h2 {
+    font-style: italic;
+    color: #69727d;
+    font-size: 18px;
+}
+
+#payment-span {
+    display: flex;
+    justify-content: center;  /* Horizontal centering */
+    align-items: center;  
+    background-color: #cad8f1;;
+    border-radius: 15px;
+    padding: 0 4vw;
+    height: 8vh;
+}
+
+#add-payment-button{
+    background-color: none;
+    border-color: rgb(0, 195, 255);
+    padding: 5px;
 }
 
   /* Optional: Responsive Design */
