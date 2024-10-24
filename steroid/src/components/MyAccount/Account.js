@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Account = ({showContent}) => {
+export const Account = ({showContent}) => {
   return (
                 
     <div id="account" class="content-section">

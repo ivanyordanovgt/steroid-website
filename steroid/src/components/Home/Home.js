@@ -2,8 +2,7 @@ import React from 'react'
 import './home.css'
 import './homeBoxes.css'
 import './product.css'
-import './about.css'
-import ArrowMenu from './arrowMenu'
+import ArrowMenu from '../arrowMenu/arrowMenu'
 import ProductsList from './ProductsList'
 const Home = () => {
     const imgUrls = {'lab': 'https://kits4less.com/wp-content/uploads/2023/11/testing-icon.svg',

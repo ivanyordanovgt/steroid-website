@@ -6,7 +6,7 @@ import Addresses from './Addresses';
 import Payment from './Payment';
 import Account from './Account';
 
-const MyAccount = ({userProps}) => {
+export const MyAccount = ({userProps}) => {
     const [activeSection, setActiveSection] = useState('dashboard');
     // const [firstName, setFirstName] = useState('');
     // const [LastName, setLasttName] = useState('');
@@ -56,5 +56,3 @@ const MyAccount = ({userProps}) => {
         </div>
     )
 }
-
-export default MyAccount
