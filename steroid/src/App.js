@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
+import MyAccount from "./components/MyAccount";
 import Contact from "./components/Contact";
 import './App.css';
 import ShopProducts from "./components/ShopProducts";
@@ -27,7 +28,7 @@ function App() {
           <a href='#'>Quality control</a>
           <a href='#'>Verify</a>
           <a href='#'>Help Centre</a>
-          <a href='#'>My account</a>
+          <a href='/my-account'>My account</a>
           <ShoppingCart cartItems={shoppingCartItems} setShoppingCartItems={setShoppingCartItems}/> {/* Corrected prop usage */}
         </div>
         <img src='https://kits4less.com/wp-content/uploads/2023/10/k4l_logo_white.svg' alt="Logo" />
@@ -38,6 +39,7 @@ function App() {
         <Route path="/products" element={<ShopProducts addToCart={addToCart} />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/check-cart" element={<CheckCart shoppingCartItems={shoppingCartItems}/>} />
+        <Route path="/my-account" element={<MyAccount/>}></Route>
       </Routes>
     </Router>
   );

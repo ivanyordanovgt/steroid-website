@@ -1,0 +1,53 @@
+.my-account-container {
+    display: flex;
+}
+
+/* Style the sidebar */
+.side-bar {
+    width: 200px;
+    background-color: #e6e6fa;
+    border-radius: 15px 0 0 15px;
+    padding: 10px;
+}
+
+/* Sidebar links */
+.side-bar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-bar ul li {
+    margin: 10px 0;
+}
+
+.side-bar ul li a {
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #5a5a5a;
+    transition: 0.3s;
+}
+
+.side-bar ul li a:hover {
+    background-color: #7a49db;
+    color: white;
+    border-radius: 10px;
+}
+
+/* Content area */
+.my-account-content {
+    padding: 20px;
+    width: 100%;
+    background-color: #f9f9f9;
+    border-radius: 0 15px 15px 0;
+}
+
+  /* Optional: Responsive Design */
+  @media (max-width: 768px) {
+
+  }
+  
+  @media (max-width: 480px) {
+
+  }
+  
