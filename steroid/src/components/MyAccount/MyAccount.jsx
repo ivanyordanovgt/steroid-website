@@ -13,12 +13,16 @@ export const MyAccount = ({accountProps}) => {
         setActiveSection(section);
     }
 
+    function upperFirstLetter(word){
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    }
+
     const navElements = {
-        'dashboard': <Dashboard showContent={showContent} userProps={accountProps.user}/>,
-        'orders': <Orders showContent={showContent} orderProps={accountProps.orders}/>,
-        'addresses': <Addresses showContent={showContent}/>,
-        'payment': <Payment showContent={showContent}/>,
-        'account': <Account showContent={showContent}/>
+        'Dashboard': <Dashboard showContent={showContent} userProps={accountProps.user}/>,
+        'Orders': <Orders showContent={showContent} orderProps={accountProps.orders}/>,
+        'Addresses': <Addresses showContent={showContent}/>,
+        'Payment': <Payment showContent={showContent}/>,
+        'Account': <Account showContent={showContent}/>
     }
 
     const logout = () => {
@@ -32,7 +36,7 @@ export const MyAccount = ({accountProps}) => {
                 <div className='sidebar'>
                     <ul>
                         {Object.keys(navElements).map((key) => {
-                           return <li onClick={() => showContent(key)} className={activeSection===key ? 'greenclassname': ''}>{key}</li>
+                           return <li onClick={() => showContent(key)} className={activeSection===key ? 'hovered': ''}>{key}</li>
                         })}
                         
                         <li onClick={() => logout}>Logout</li>

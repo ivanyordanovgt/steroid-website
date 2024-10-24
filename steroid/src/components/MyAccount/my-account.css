@@ -18,33 +18,42 @@
 .my-account-container .main-content{
     display: flex;
     justify-content: space-around;
+    align-items: flex-start;
 }
 
 /* Style the sidebar */
 .my-account-container .sidebar {
-    width: 200px;
+    width: 25%;
     background-color: #e6e6fa;
     border-radius: 15px 0 0 15px;
-    padding: 10px;
 }
 
 /* Sidebar links */
 .my-account-container .sidebar ul {
+    width: 100%;
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 .my-account-container .sidebar ul li {
-    margin: 10px 0;
+    width: 100%;
+    height: 5vh;
+    padding-top: 2vh;
+    margin-bottom: 10px;
     text-decoration: none;
     font-family: Arial, sans-serif;
     font-size: 16px;
-    color: #5a5a5a;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    color: #7152ad;
     transition: 0.3s;
 }
 
 .my-account-container .sidebar .hovered {
     background-color: #7a49db;
+    color: #573d8a;
     color: white;
     border-radius: 10px;
 }
@@ -89,14 +98,42 @@
 }
 
 #account .wrapper form input{
+    font-size: 14px;
     padding: 15px;
+    border: none;
+    background-color: #f3edfd;
 }
 
 #account .wrapper form label{
+    font-size: 14px;
     margin-top: 15px;
 }
 
-#form-span{
+#account .wrapper form .name-holder{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.first-name-holder{
+    display: flex;
+    width: 45%;
+    flex-direction: column;
+}
+
+.last-name-holder{
+    margin-left: 5%;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+}
+
+#form-span-1{
+    font-size: 14px;
+    font-style: italic;
+}
+
+#form-span-2{
     font-weight: 900;
     margin-top: 5vh;
     color: #372580;
@@ -108,11 +145,11 @@
     height: 5vh;
     color: white;
     font-size: calc(.55vw + .55em);
-    font-weight: bold;
+    font-weight: 400;
     border: none;
     border-radius: 10px;
     align-items: flex-start;
-    width: 15vw;
+    width: 12vw;
 }
 
 #address-h2 {
