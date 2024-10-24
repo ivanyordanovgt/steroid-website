@@ -1,7 +1,7 @@
 import React from 'react'
 import './check-cart.css'
 
-const CheckCart = ({shoppingCartItems}) => {
+export const CheckCart = ({shoppingCartItems}) => {
     const totalPrice = 335;
   const testImageUrl = 'https://kits4less.com/wp-content/uploads/2024/05/standard-closed.png';
 

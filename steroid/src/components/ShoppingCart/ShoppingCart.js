@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './shopping-cart.css';
 import { useNavigate } from 'react-router-dom';
 
-const ShoppingCart = ({ cartItems, setShoppingCartItems }) => {
+export const ShoppingCart = ({ cartItems, setShoppingCartItems }) => {
   const [isOpen, setIsOpen] = useState(false);
   const cartRef = useRef(null); // Create a ref for the cart panel
   const testImageUrl = 'https://kits4less.com/wp-content/uploads/2024/05/standard-closed.png';
@@ -89,4 +89,4 @@ const ShoppingCart = ({ cartItems, setShoppingCartItems }) => {
   );
 };
 
-export default ShoppingCart;
+export default ShoppingCart

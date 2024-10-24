@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductsList from './ProductsList'
 
-const ShopProducts = ({addToCart}) => {
+export const ShopProducts = ({addToCart}) => {
     const pCreate = (id, perIU, price, title, text) => {return {id, price, title, text, perIU}};
 
     const products = [
@@ -32,5 +32,3 @@ const ShopProducts = ({addToCart}) => {
     </>
   )
 }
-
-export default ShopProducts
