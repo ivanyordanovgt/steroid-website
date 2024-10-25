@@ -1,0 +1,53 @@
+.checkout-container .title-span{
+    font-size: 3em;
+    font-weight: 900;
+    color: #372580;
+    text-align: center;
+    margin-bottom: 2vh;
+    margin-left: 6%;
+    padding-top: 2vh;
+}
+
+#details-form {
+    width: 98%;
+    margin-left: 5%;
+    margin-right: 3.5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#details-form div{
+    width: 40%;
+    height: auto;
+    margin: 2%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#details-form .details-holder, .order-holder, .additional-info-holder, .coupon-holder, .crypto-submit-holder{
+    border: 1px solid lightgray;
+}
+
+#details-form .details-holder, .additional-info-holder{
+    display: flex;
+    flex-direction: column;
+}
+
+#details-form .details-holder .name-holder{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#details-form input{
+    font-size: 14px;
+    padding: 15px;
+    border: none;
+    background-color: #f3edfd;
+}
+
+#details-form label{
+    font-size: 14px;
+    margin-top: 15px;
+}

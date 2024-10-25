@@ -1,3 +1,4 @@
+
 .cart-container {
     display: flex; /* Enable flexbox for layout */
     justify-content: space-between; /* Space between the two divs */
@@ -5,6 +6,8 @@
 }
 
 .cart-products {
+    display: flex;
+    flex-direction: column;
     position: relative;
     background-color: white;
     padding-top: 6vh;
@@ -20,6 +23,7 @@
 
 .cart-products .cart-product {
     display: flex; /* Use flexbox for layout */
+    flex-direction: row;
     align-items: center; /* Vertically center items */
     width: 90%; /* Set width of the cart product */
     margin: 10px 0; /* Add some space between products */

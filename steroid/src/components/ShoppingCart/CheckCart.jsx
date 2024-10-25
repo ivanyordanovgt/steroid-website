@@ -68,8 +68,7 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
                 /><h2>${item.price}</h2>
                 </div>
             })}
-        </div>
-          
+        </div>     
         <div className='check-cart-checkout'>
           <h1 id='title'>Card Totals</h1>
 
@@ -100,7 +99,6 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
             <input placeholder='Coupon code'></input>
             <button>Apply coupon</button>
         </div>
-
     </div>
   )
 }

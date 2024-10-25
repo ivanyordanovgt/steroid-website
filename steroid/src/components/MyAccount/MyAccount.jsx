@@ -5,34 +5,25 @@ import Orders from './Orders';
 import Addresses from './Addresses';
 import Payment from './Payment';
 import Account from './Account';
+import { toUpperFirstLetter } from '../../core/stringUtils';
 
-export const MyAccount = ({userProps}) => {
+export const MyAccount = ({accountProps}) => {
     const [activeSection, setActiveSection] = useState('dashboard');
-    // const [firstName, setFirstName] = useState('');
-    // const [LastName, setLasttName] = useState('');
-    // const [firstName, setFirstName] = useState('');
-    // const [firstName, setFirstName] = useState('');
 
     const showContent = (section) => {
         setActiveSection(section);
-        document.getElementById(activeSection).style.display = "block";
     }
 
     const navElements = {
-        'dashboard': <Dashboard showContent={showContent} userProps={userProps}/>,
-        'orders': <Orders showContent={showContent}/>,
+        'dashboard': <Dashboard showContent={showContent} userProps={accountProps.user}/>,
+        'orders': <Orders showContent={showContent} orderProps={accountProps.orders}/>,
         'addresses': <Addresses showContent={showContent}/>,
         'payment': <Payment showContent={showContent}/>,
         'account': <Account showContent={showContent}/>
     }
-    // const handleFirstName = (e) => {
-    //     setFirstName(e.target.value);
-    // }
-    // const handleLastName = (e) => {
-    //     setLastName(e.target.value);
-    // }
-    const logout = () => {
 
+    const logout = () => {
+        console.log("log out");
     }
 
     return(
@@ -41,12 +32,11 @@ export const MyAccount = ({userProps}) => {
             <div className='main-content'>
                 <div className='sidebar'>
                     <ul>
-                        <li onClick={() => showContent('dashboard')}>Dashboard</li>
-                        <li onClick={() => showContent('orders')}>Orders</li>
-                        <li onClick={() => showContent('addresses')}>Addresses</li>
-                        <li onClick={() => showContent('payment')}>Payment Methods</li>
-                        <li onClick={() => showContent('account')}>Account Details</li>
-                        <li onClick={() => logout}>Logout</li>
+                        {Object.keys(navElements).map((key) => {
+                           return <li id={key} key={key} onClick={() => showContent(key)} className={activeSection===key ? 'hovered': ''}>{toUpperFirstLetter(key)}</li>
+                        })}
+                        
+                        <li id='logout' key={'logout'} onClick={logout}>Logout</li>
                     </ul>
                 </div>
                 <div className='content'>
