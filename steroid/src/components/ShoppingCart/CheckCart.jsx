@@ -92,7 +92,7 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
 
           <div className='header'>
             <h2>Subtotal</h2>
-            <h3>${calcPriceTotal()}.00</h3>
+            <h3>${calcPriceTotal()}</h3>
           </div>
 
           <div className='shipping'>
