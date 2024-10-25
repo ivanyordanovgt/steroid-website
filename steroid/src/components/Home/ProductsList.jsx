@@ -16,7 +16,7 @@ const ProductsList = ({products, titleLabel, addToCart}) => {
           
           
           <div className="product-details">
-            <h2>${product.price}</h2>
+            <h2>${product.price.toFixed(2)}</h2>
             <h3 className="product-title">{product.title}</h3>
             <p className="product-text">{product.text}</p>
             <button onClick={() => addToCart(product)}>Add to card</button>

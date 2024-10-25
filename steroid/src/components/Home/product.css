@@ -118,4 +118,9 @@
       width: 100%; /* 1 item per row on very small screens */
     }
   }
+
+  .product button:hover {
+    background-color: #8b70ff;
+    cursor: pointer;
+  }
   

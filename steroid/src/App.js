@@ -8,6 +8,7 @@ import { ShopProducts } from "./components/Home/ShopProducts";
 import { Contact } from "./components/Contact";
 import { MyAccount } from "./components/MyAccount/MyAccount";
 import { Checkout } from "./components/Checkout/Checkout"
+import shopCartIMG from './shop_icon_2.png'
 function App() {
   const [shoppingCartItems, setShoppingCartItems] = useState([]);
 
@@ -42,7 +43,7 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/products" element={<ShopProducts addToCart={addToCart}/>} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/check-cart" element={<CheckCart shoppingCartItems={shoppingCartItems}/>} />
+        <Route path="/check-cart" element={<CheckCart shoppingCartItems={shoppingCartItems} setShoppingCartItems={setShoppingCartItems}/>} />
         <Route path="/checkout" element={<Checkout/>}/>
         <Route path="/my-account" element={<MyAccount accountProps={userData}/>}></Route>
 

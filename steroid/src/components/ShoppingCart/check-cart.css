@@ -245,3 +245,11 @@
     background-color: #8a70ff;
     cursor: pointer;
 }
+
+.coupon-input button {
+    cursor: pointer;
+}
+
+.coupon-input button:hover {
+    background-color: #4219f71a;
+}
