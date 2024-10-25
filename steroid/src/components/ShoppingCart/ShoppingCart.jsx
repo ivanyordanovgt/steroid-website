@@ -61,7 +61,7 @@ export const ShoppingCart = ({ cartItems, setShoppingCartItems }) => {
               {cartItems.map(item => (
                 <>              
                 <li key={item.id} className="cart-item">
-                <img src={testImageUrl}></img>
+                <img src={testImageUrl} alt='item-image'></img>
 
                   <h1>{item.title}</h1>
                   <p>${item.price}</p>
