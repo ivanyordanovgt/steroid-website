@@ -40,7 +40,6 @@
     width: 100%;
     height: 5vh;
     padding-top: 2vh;
-    margin-bottom: 10px;
     text-decoration: none;
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -48,19 +47,27 @@
     text-align: center;
     justify-content: center;
     color: #7152ad;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
+.my-account-container .sidebar ul li:hover {
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+
 .my-account-container .sidebar .hovered {
+    transition: 0.4s;
     background-color: #7a49db;
     color: #573d8a;
     color: white;
-    border-radius: 10px;
 }
 
+.my-account-container .sidebar #dashboard{
+    border-radius: 15px 0 0 0;
+}
+.my-account-container .sidebar #logout{
 
-.my-account-container .content .sidebar ul li{
-    
 }
 /* Content area */
 .my-account-container .content {
@@ -70,14 +77,35 @@
     border-radius: 0 15px 15px 0;
 }
 
-.my-account-container .content .content-section #orders-wrapper{
+#orders-wrapper{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 4vw;
-    height: 4vh;
+    height:9vh;
     background-color: #cad8f1;;
     border-radius: 25px;
+}
+
+#orders-wrapper button{
+    transition: 0.4s;
+    background-color: none;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: rgb(101, 167, 189);
+    color: rgb(49, 161, 198);
+    font-size: 14px;
+    font-weight: 500;
+    height: 5vh;
+    width: 14vw;
+    cursor: pointer;
+}
+
+#orders-wrapper button:hover{
+    transition: 0.4s;
+    background-color: #53b1f5;
+    border-color: #467cea;
+    color: #0146d1;
 }
 
 .my-account-container .content .content-section #payment-wrapper {
@@ -115,6 +143,10 @@
     justify-content: flex-start;
 }
 
+.content #orders-wrapper{
+    height: 6;
+}
+
 .first-name-holder{
     display: flex;
     width: 45%;
@@ -140,16 +172,32 @@
 }
 
 #account .wrapper form button{
+    transition: 0.4s;
     background-color: #6b4cf8;
     margin-left: 1%;
-    height: 5vh;
     color: white;
     font-size: calc(.55vw + .55em);
     font-weight: 400;
     border: none;
     border-radius: 10px;
     align-items: flex-start;
+    height: 5vh;
     width: 12vw;
+}
+
+#account .wrapper form button:hover{
+    transition: 0.4s;
+    background-color: #a18cff;
+    color: #8003ce;
+    width: 12.5vw;
+    
+}
+
+#add-billing-address-link{
+    font-size: large;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 #address-h2 {
@@ -168,10 +216,25 @@
     width: 100%;
 }
 
-#add-payment-button{
-    background-color: none;
-    border-color: rgb(0, 195, 255);
-    padding: 5px;
+#add-payment-button{    
+    transition: 0.5s;
+    background-color: white;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: rgb(101, 124, 189);
+    color: rgb(49, 108, 198);
+    font-size: 14px;
+    font-weight: bold;
+    height: 6vh;
+    width: 14vw;
+    cursor: pointer;
+}
+
+#add-payment-button:hover{
+    transition: 0.5s;
+    background-color: #6d49fb91;
+    border-color: rgba(67, 4, 150, 0.699);
+    color: rgba(67, 4, 150, 0.699);
 }
 
   /* Optional: Responsive Design */

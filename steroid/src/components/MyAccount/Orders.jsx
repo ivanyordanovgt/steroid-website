@@ -7,7 +7,7 @@ const Orders = ({showContent}) => {
     <div id="orders" class="content-section">
         <div className='wrapper' id='orders-wrapper'>
             <span>No orders have been made yet!</span>
-            <button onClick={redirect('/products')}>Browse products</button>
+            <button onClick={() => window.location.href = "./products"}>Browse products</button>
         </div>
     </div>
   )
