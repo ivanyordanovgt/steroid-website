@@ -18,9 +18,25 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
       }
       return product; // Return other items unchanged
     });
+
   
     setShoppingCartItems(reworkedList); // Update state with the new list
   };
+
+  function calcPriceTotal() {
+    let total = 0;
+    for (let item of shoppingCartItems) {
+      total += Number(item.price) * item.count
+    }
+
+    return total;
+   }
+
+  function removeItemFromCart(id) {
+    const updatedCart = shoppingCartItems.filter(item => item.id !== id);
+    setShoppingCartItems(updatedCart);
+  }
+  
     
   return (
     <div class='check-cart'>
@@ -35,7 +51,7 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
             </div>
             {shoppingCartItems.map((item) => {
                 return <div className='cart-product'>
-                <h1><span>×</span></h1>
+                <h1 onClick={() => removeItemFromCart(item.id)}><span>×</span></h1>
                 <img src={testImageUrl}></img>
                 <h2><span>{item.title}</span></h2>  
                 <div className='space-between-title'></div>
@@ -53,9 +69,34 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
                 </div>
             })}
         </div>
-        <img src={myImage} style={{marginLeft: '56vw', 'width': '35vw', position: 'absolute'}}></img>
-        
-        <div className='coupon-input' style={{marginTop: '54vh'}}>
+          
+        <div className='check-cart-checkout'>
+          <h1 id='title'>Card Totals</h1>
+
+          <div className='header'>
+            <h2>Subtotal</h2>
+            <h3>${calcPriceTotal()}.00</h3>
+          </div>
+
+          <div className='shipping'>
+            <h2>Shipping</h2>
+            <div>
+              <h4>ECONT Fast shipping: $5.00</h4>
+              <h4>Shipping to: <span>Sofia</span></h4>
+              <a href='#'>Change address</a>
+            </div>
+
+          </div>
+
+          <div className='total'>
+            <h2>Total</h2>
+            <h3>${calcPriceTotal()+5}.00</h3>
+          </div>
+
+        <button>Procceed to checkout</button>
+        </div>
+
+        <div className='coupon-input' style={{marginTop: `${40+12*(shoppingCartItems.length-1)}vh`}}>
             <input placeholder='Coupon code'></input>
             <button>Apply coupon</button>
         </div>

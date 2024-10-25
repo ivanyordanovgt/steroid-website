@@ -153,3 +153,91 @@
     font-weight: 600;
     color: rgb(139, 114, 248);
 }
+
+.check-cart-checkout {
+    float: right;
+    width: 28vw;
+    margin-right: 5vw;
+    background-color: white;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border-radius: 13px;
+    padding-bottom: 3vh;
+    margin-top: 3.5vh;
+}
+
+.check-cart-checkout #title {
+    font-size: calc(.75vw + .75em);
+    margin-left: 1vw;
+    padding-top: 1.5vh;
+    height: 2vh;
+    font-weight: 1000;
+}
+
+.check-cart-checkout div {
+    height: 8vh;
+}
+
+.check-cart-checkout h2, .check-cart-checkout h3 {
+    font-size: calc(.5vw + .5em);
+    font-weight: 800;
+    color: rgba(54, 53, 53, 0.885);
+    margin-left: 1vw;
+}
+
+.check-cart-checkout a {
+    margin-left: 1vw;
+    font-size: calc(.45vw + .45em);
+    cursor: pointer;
+    text-decoration: none;
+    color:#6f51f4;
+    font-weight: 700;
+}
+.check-cart-checkout h2, .check-cart-checkout h3, .check-cart-checkout h4 {
+    height: 1vh;
+}
+
+.check-cart-checkout .header h2 {
+    float: left;
+}
+
+.check-cart-checkout .header h3 {
+    float: right;
+}
+
+.check-cart-checkout .total h2 {
+    float: left;
+}
+
+.check-cart-checkout .total h3 {
+    float: right;
+}
+
+.check-cart-checkout .shipping h4 {
+    margin-left: 1vw;
+    font-size: calc(.44vw + .44em);
+    color: rgba(101, 101, 101, 0.751)
+}
+
+.check-cart-checkout .shipping {
+    height: 15vh;
+}
+
+.check-cart-checkout button {
+    font-size: calc(.5vw + .5em);
+    padding-left: 1.5vw;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+    padding-right: 1.5vw;
+    background-color: #6f51f4;
+    color: white;
+    font-weight: bold;
+    border-radius: 7px;
+    border: none;
+    margin-left: 1vw;
+}
+
+.check-cart-checkout button:hover {
+    background-color: #8a70ff;
+    cursor: pointer;
+}
