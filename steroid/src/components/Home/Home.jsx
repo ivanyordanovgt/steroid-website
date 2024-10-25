@@ -30,7 +30,7 @@ const Home = () => {
     <div className='header'>
     
     <div class='content'>
-        <img src='https://kits4less.com/wp-content/uploads/2024/08/image-1.png'></img>
+        <img src='https://kits4less.com/wp-content/uploads/2024/08/image-1.png' alt='logo'></img>
         <div class='text'>
                 
             <h1>

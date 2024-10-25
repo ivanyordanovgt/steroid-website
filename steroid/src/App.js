@@ -7,11 +7,17 @@ import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import { ShopProducts } from "./components/Home/ShopProducts";
 import { Contact } from "./components/Contact";
 import { MyAccount } from "./components/MyAccount/MyAccount";
+import { Checkout } from "./components/Checkout/Checkout"
 function App() {
   const [shoppingCartItems, setShoppingCartItems] = useState([]);
 
   const addToCart = (item) => {
     setShoppingCartItems((prevItems) => [...prevItems, item]);
+  }
+  // const userData = db.get('user/data')
+  const userData = {
+    user: 'testUser', 
+    orders: ['testOrder1', 'testOrder2']
   }
 
   return (
@@ -29,7 +35,7 @@ function App() {
           <a href='/my-account'>My account</a>
           <ShoppingCart cartItems={shoppingCartItems} setShoppingCartItems={setShoppingCartItems}/> {/* Corrected prop usage */}
         </div>
-        <img src='https://kits4less.com/wp-content/uploads/2023/10/k4l_logo_white.svg' alt="Logo" />
+        <a href="/"><img src='https://kits4less.com/wp-content/uploads/2023/10/k4l_logo_white.svg' alt="Logo" /></a>
       </div>
 
       <Routes>
@@ -37,7 +43,8 @@ function App() {
         <Route path="/products" element={<ShopProducts addToCart={addToCart}/>} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/check-cart" element={<CheckCart shoppingCartItems={shoppingCartItems}/>} />
-        <Route path="/my-account" element={<MyAccount userProps={{user: 'testUser'}}/>} user={"user"}></Route>
+        <Route path="/checkout" element={<Checkout/>}/>
+        <Route path="/my-account" element={<MyAccount accountProps={userData}/>}></Route>
       </Routes>
     </Router>
   );
