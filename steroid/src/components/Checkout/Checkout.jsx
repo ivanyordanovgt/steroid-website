@@ -13,11 +13,11 @@ export const Checkout = () => {
                         <div className='name-holder'>
                             <div className='first-name-holder'>
                                 <label htmlFor='first-name-input'>First Name *</label>
-                                <input type='text' id='first-name-input'></input>
+                                <input type='text' id='first-name-input' placeholder='John'></input>
                             </div>
                             <div className='last-name-holder'>
                                 <label htmlFor='last-name-input'>Last Name *</label>
-                                <input type='text' id='last-name-input'></input>
+                                <input type='text' id='last-name-input' placeholder='Doe'></input>
                             </div>
                         </div>
                         <label htmlFor="company-name-input">Company Name (optional)</label>
@@ -35,16 +35,28 @@ export const Checkout = () => {
                     </div>
                     <div className='order-holder'>
                         <h1>Your Order</h1>
-                        
+                        <div className='order-grid'>
+                            <div class="grid-item" id='i1'>Product</div>
+                            <div class="grid-item" id='i2'>Anadrol 50mg Bottle of 100 × 2</div>
+                            <div class="grid-item" id='i3'>Subtotal</div>
+                            <div class="grid-item" id='i4'>$130.00</div>
+                            <div class="grid-item" id='i5'>Subtotal</div>
+                            <div class="grid-item" id='i6'>$130.00</div>
+                            <div class="grid-item" id='i7'>Shipping</div>
+                            <div class="grid-item" id='i8'>USPS Fast Shipping: <b>20$</b> <span>USPS Priority Mail</span></div>
+                            <div class="grid-item" id='i9'>Total</div>
+                            <div class="grid-item" id='i10'><b>$150.00</b></div>
+                        </div>
                     </div>
                     <div className='additional-info-holder'>
-                        <h1>Additional Information</h1>
+                        <h2>Additional Information</h2>
                         <label htmlFor="additional-info-input">Order Notes (optional)</label>
                         <input type="text" id='additional-info-input' placeholder='Notes about your order, e.g. special notes for delivery.'/>
                     </div>
                     <div className='coupon-holder'>
                         <span>Have a coupon? <a href='#'>Click here to enter your coupon!</a></span>
                     </div>
+                    <div className='hidden-div' style={{visibility: "hidden"}}></div>
                     <div className='crypto-submit-holder'>
                         <div className='crypto'>
                             <input type="radio" id='bitcoin'/>

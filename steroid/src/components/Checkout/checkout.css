@@ -18,21 +18,55 @@
 }
 
 #details-form div{
-    width: 40%;
     height: auto;
-    margin: 2%;
     background-color: white;
     border-radius: 10px;
 }
 
-#details-form .details-holder, .order-holder, .additional-info-holder, .coupon-holder, .crypto-submit-holder{
+#details-form .details-holder{
+    padding: 1em;
+}
+
+#details-form .details-holder, .order-holder, .additional-info-holder, .coupon-holder, .crypto-submit-holder, .hidden-div{
+    margin: 2%;
+    width: 40%;
     border: 1px solid lightgray;
 }
 
+#details-form .coupon-holder{
+    height: 6vh;
+    text-align: center;
+    padding: 3vh;
+}
+
+#submit-order-button{
+    transition: 0.4s;
+    background-color: #6b4cf8;
+    margin-left: 1%;
+    color: white;
+    font-size: calc(.55vw + .55em);
+    font-weight: 400;
+    border: none;
+    border-radius: 10px;
+    align-items: flex-start;
+    height: 5vh;
+    width: 12vw;
+}
+
+#submit-order-button:hover{
+    transition: 0.4s;
+    background-color: #a18cff;
+    color: #8003ce;
+    width: 12.5vw;
+    
+}
 #details-form .details-holder, .additional-info-holder{
+    margin-left: 1em;
+    padding: 1em;
     display: flex;
     flex-direction: column;
 }
+
 
 #details-form .details-holder .name-holder{
     display: flex;
@@ -40,14 +74,81 @@
     justify-content: flex-start;
 }
 
+#detail-form .name-holder{
+    margin: 0;
+}
+
 #details-form input{
     font-size: 14px;
     padding: 15px;
     border: none;
-    background-color: #f3edfd;
+    background-color: #f0edf5;
+    border-radius: 10px;
 }
 
 #details-form label{
     font-size: 14px;
     margin-top: 15px;
+}
+
+#details-form  h1{
+    padding: 1em;
+}
+
+#details-form h2{
+    padding-left: 1em;
+}
+
+#details-form .order-holder .order-grid {
+    padding: 4%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    color: gray;
+}
+
+#details-form .order-holder .order-grid div{
+    display: grid;
+    gap: 10px;
+}
+
+#details-form .order-holder .order-grit #i1, #i3, #i5, #i7, #i9{
+    grid-column: 1;
+}
+
+#checkout-form .order-holder .order-grit #i2, #i4, #i6, #i8, #i10{
+    grid-column: 2;
+}
+
+#checkout-form .order-holder .order-grid .item {
+border-bottom: 1px solid #e0e0e0;
+padding-bottom: 10px;
+}
+
+#checkout-form .order-holder .order-grid .label {
+font-weight: bold;
+}
+
+#checkout-form .order-holder .order-grid .subtotal, .order-grid .total, .order-grid .shipping-price {
+justify-self: end;
+font-weight: bold;
+}
+
+#checkout-form .order-holder .shipping-details {
+margin: 5px 0;
+}
+
+#checkout-form .order-holder .total {
+font-size: 1.2em;
+}
+
+#checkout-form .order-holder .divider {
+grid-column: span 2;
+border-top: 1px solid #e0e0e0;
+margin: 10px 0;
+}
+
+#checkout-form .order-holder .shipping-details span {
+display: block;
+font-size: 0.9em;
 }
