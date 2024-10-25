@@ -4,13 +4,13 @@
     color: #372580;
     text-align: center;
     margin-bottom: 2vh;
-    margin-left: 5.6%;
+    margin-left: 6%;
     padding-top: 2vh;
 }
 
 #details-form {
-    width: 93%s;
-    margin-left: 3.5%;
+    width: 98%;
+    margin-left: 5%;
     margin-right: 3.5%;
     display: flex;
     flex-direction: row;
@@ -18,16 +18,26 @@
 }
 
 #details-form div{
-    width: 45%;
-    margin: 3vh;
-    background-color: white;
-    border-radius: 5px;
+    width: 40%;
     height: auto;
+    margin: 2%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#details-form .details-holder, .order-holder, .additional-info-holder, .coupon-holder, .crypto-submit-holder{
+    border: 1px solid lightgray;
 }
 
 #details-form .details-holder, .additional-info-holder{
     display: flex;
     flex-direction: column;
+}
+
+#details-form .details-holder .name-holder{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
 #details-form input{

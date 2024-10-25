@@ -10,10 +10,16 @@ export const Checkout = () => {
                 <form action="" className='checkout-form' id='details-form'>
                     <div className='details-holder'>
                         <h1>Your Details</h1>
-                        <label htmlFor="first-name-input" placeholder="First Name">First Name *</label>
-                        <input type="text" id='first-name-input'/>
-                        <label htmlFor="first-name-input">Last Name *</label>
-                        <input type="text" id='first-name-input' placeholder='Last Name'/>
+                        <div className='name-holder'>
+                            <div className='first-name-holder'>
+                                <label htmlFor='first-name-input'>First Name *</label>
+                                <input type='text' id='first-name-input'></input>
+                            </div>
+                            <div className='last-name-holder'>
+                                <label htmlFor='last-name-input'>Last Name *</label>
+                                <input type='text' id='last-name-input'></input>
+                            </div>
+                        </div>
                         <label htmlFor="company-name-input">Company Name (optional)</label>
                         <input type="text" id='first-name-input' placeholder='Company Name'/>
                         <label htmlFor="country-region-input">Country *</label>
@@ -29,6 +35,7 @@ export const Checkout = () => {
                     </div>
                     <div className='order-holder'>
                         <h1>Your Order</h1>
+                        
                     </div>
                     <div className='additional-info-holder'>
                         <h1>Additional Information</h1>
