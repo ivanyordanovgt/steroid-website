@@ -7,6 +7,7 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
   const testImageUrl = 'https://kits4less.com/wp-content/uploads/2024/05/standard-closed.png';
 
   const [quantity, setQuantity] = useState(1); // Initial quantity set to 1
+  const [couponCodeInput, setCouponCodeInput] = useState('');
 
   const handleQuantityChange = (e, item) => {
     const newQuantity = parseInt(e.target.value, 10); // Get the new quantity from input
@@ -36,6 +37,21 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
     const updatedCart = shoppingCartItems.filter(item => item.id !== id);
     setShoppingCartItems(updatedCart);
   }
+
+  function applyCoupon(e) {
+    const result = [];
+    for (let item of shoppingCartItems) {
+      if (item.allowedCoupon && item.allowedCoupon.text === couponCodeInput) {
+         item.isFilterApplied = true;
+         item.couponReduces = (item.price*item.allowedCoupon.percentage)/100;
+         item.price = item.price - item.couponReduces;
+        };
+      
+        result.push(item);
+    }
+
+    setShoppingCartItems(result);
+  }
   
     
   return (
@@ -55,7 +71,9 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
                 <img src={testImageUrl}></img>
                 <h2><span>{item.title}</span></h2>  
                 <div className='space-between-title'></div>
-                <h2>${item.price}</h2>
+                <h2>
+                  {item.isFilterApplied===false ? <>${item?.price.toFixed(2)}</>: <><span style={{textDecoration: 'line-through', float: 'left'}}>${(item.price+Number(item.couponReduces || 0)).toFixed(2)}</span> ${item?.price.toFixed(2)}</>}
+                  </h2>
                 <input
                 type="number"
                 id="quantity"
@@ -65,7 +83,7 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
                 step="1"
                 value={item.count}
                 onChange={(e) => handleQuantityChange(e, item)} // Pass the event and item correctly
-                /><h2>${item.price}</h2>
+                /><h2>${item.price*item.count}</h2>
                 </div>
             })}
         </div>     
@@ -89,15 +107,15 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
 
           <div className='total'>
             <h2>Total</h2>
-            <h3>${calcPriceTotal()+5}.00</h3>
+            <h3 >${calcPriceTotal()+5}.00</h3>
           </div>
 
         <button>Procceed to checkout</button>
         </div>
 
-        <div className='coupon-input' style={{marginTop: `${40+12*(shoppingCartItems.length-1)}vh`}}>
-            <input placeholder='Coupon code'></input>
-            <button>Apply coupon</button>
+        <div className='coupon-input' style={{marginTop: `${40+13*(shoppingCartItems.length-1)}vh`}}>
+            <input placeholder='Coupon code' value={couponCodeInput} onChange={(e) => setCouponCodeInput(e.target.value)}></input>
+            <button onClick={applyCoupon}>Apply coupon</button>
         </div>
     </div>
   )

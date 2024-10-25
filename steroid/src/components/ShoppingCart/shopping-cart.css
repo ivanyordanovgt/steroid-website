@@ -96,6 +96,7 @@
   padding-bottom: 3vh;
 }
 
+
 .shopping-cart .sub-total {
   padding-top: 21vh;
   width: 90%;
@@ -123,6 +124,12 @@
   margin-left: 1vw;
   border-radius: 10px;
   margin-top: 3vh;
+  font-weight: 600;
+  color: #7051f4;
+}
+
+.shopping-cart .checkout-buttons button:hover {
+  background-color: #9d87ff;
 }
 
 .shopping-cart .checkout-buttons .checkout {

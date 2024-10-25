@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './shopping-cart.css';
 import { useNavigate } from 'react-router-dom';
-
+import shopCartIMG from '../../shop_icon_2.png'
 export const ShoppingCart = ({ cartItems, setShoppingCartItems }) => {
   const [isOpen, setIsOpen] = useState(false);
   const cartRef = useRef(null); // Create a ref for the cart panel
@@ -51,7 +51,7 @@ export const ShoppingCart = ({ cartItems, setShoppingCartItems }) => {
     <div className="shopping-cart">
       <div className='content'>
       <button className="cart-toggle" onClick={toggleCart}>
-        <img src='https://cdn-icons-png.flaticon.com/512/4903/4903482.png' alt="Cart" /> ({cartItems.length})
+        <img src={shopCartIMG} alt="Cart" /> <span style={{color: 'white'}}>({cartItems.length})</span>
       </button>
 
       <div className={`cart-panel ${isOpen ? 'open' : ''}`} ref={cartRef}>
