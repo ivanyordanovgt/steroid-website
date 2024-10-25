@@ -45,8 +45,12 @@ function App() {
         <Route path="/check-cart" element={<CheckCart shoppingCartItems={shoppingCartItems}/>} />
         <Route path="/checkout" element={<Checkout/>}/>
         <Route path="/my-account" element={<MyAccount accountProps={userData}/>}></Route>
+
       </Routes>
+
+      <h1>Footer</h1>
     </Router>
+    
   );
 }
 
