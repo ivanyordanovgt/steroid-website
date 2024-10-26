@@ -2,7 +2,7 @@ import React from 'react'
 
 const Dashboard = ({showContent, userProps}) => {
   return (
-    <div id="dashboard" class="content-section">
+    <div id="dashboard" className="content-section">
         <div className='wrapper'>
             <span>Hello {userProps.user}! Not {userProps.user}? <a href='#' onClick={() => showContent('logout')} className='dashboard-link'>Log out.</a></span>
             <p>From your account dashboard you can view your 

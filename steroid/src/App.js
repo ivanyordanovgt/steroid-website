@@ -22,33 +22,35 @@ function App() {
 
   return (
     <Router>
-      <div className='top-message'>
-        <h1>BUY 3 GET 1 STANDARD HGH CODE 'BUY3' - THIS WEEK ONLY!</h1>
-      </div>
-
-      <div className='title'>
-        <div className='nav'>
-          <a href='/products'>Shop products</a>
-          <a href='#'>Quality control</a>
-          <a href='#'>Verify</a>
-          <a href='#'>Help Centre</a>
-          <a href='/my-account'>My account</a>
-          <ShoppingCart cartItems={shoppingCartItems} setShoppingCartItems={setShoppingCartItems}/> {/* Corrected prop usage */}
+      <div className="app-container">
+        <div className='top-message'>
+          <h1>BUY 3 GET 1 STANDARD HGH CODE 'BUY3' - THIS WEEK ONLY!</h1>
         </div>
-        <a href="/"><img src='https://kits4less.com/wp-content/uploads/2023/10/k4l_logo_white.svg' alt="Logo" /></a>
+
+        <div className='title'>
+          <div className='nav'>
+            <a href='/products'>Shop products</a>
+            <a href='#'>Quality control</a>
+            <a href='#'>Verify</a>
+            <a href='#'>Help Centre</a>
+            <a href='/my-account'>My account</a>
+            <ShoppingCart cartItems={shoppingCartItems} setShoppingCartItems={setShoppingCartItems}/> {/* Corrected prop usage */}
+          </div>
+          <a href="/"><img src='https://kits4less.com/wp-content/uploads/2023/10/k4l_logo_white.svg' alt="Logo" /></a>
+        </div>
+
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/products" element={<ShopProducts addToCart={addToCart}/>} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/check-cart" element={<CheckCart shoppingCartItems={shoppingCartItems}/>} />
+          <Route path="/checkout" element={<Checkout/>}/>
+          <Route path="/my-account" element={<MyAccount accountProps={userData}/>}></Route>
+
+        </Routes>
+
+        <h1>Footer</h1>
       </div>
-
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/products" element={<ShopProducts addToCart={addToCart}/>} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/check-cart" element={<CheckCart shoppingCartItems={shoppingCartItems}/>} />
-        <Route path="/checkout" element={<Checkout/>}/>
-        <Route path="/my-account" element={<MyAccount accountProps={userData}/>}></Route>
-
-      </Routes>
-
-      <h1>Footer</h1>
     </Router>
     
   );

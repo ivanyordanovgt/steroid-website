@@ -21,8 +21,8 @@ export const Checkout = () => {
                             </div>
                         </div>
                         <label htmlFor="company-name-input">Company Name (optional)</label>
-                        <input type="text" id='first-name-input' placeholder='Company Name'/>
-                        <label htmlFor="country-region-input">Country *</label>
+                        <input type="text" id='company-name-input' placeholder='Company Name'/>
+                        <label htmlFor="country-input">Country *</label>
                         <input type="text" id='country-input' placeholder='Country'/>
                         <label htmlFor="state-input">County *</label>
                         <input type="text" id="state-input" placeholder='County'/>
@@ -36,27 +36,26 @@ export const Checkout = () => {
                     <div className='order-holder'>
                         <h1>Your Order</h1>
                         <div className='order-grid'>
-                            <div class="grid-item" id='i1'>Product</div>
-                            <div class="grid-item" id='i2'>Anadrol 50mg Bottle of 100 × 2</div>
-                            <div class="grid-item" id='i3'>Subtotal</div>
-                            <div class="grid-item" id='i4'>$130.00</div>
-                            <div class="grid-item" id='i5'>Subtotal</div>
-                            <div class="grid-item" id='i6'>$130.00</div>
-                            <div class="grid-item" id='i7'>Shipping</div>
-                            <div class="grid-item" id='i8'>USPS Fast Shipping: <b>20$</b> <span>USPS Priority Mail</span></div>
-                            <div class="grid-item" id='i9'>Total</div>
-                            <div class="grid-item" id='i10'><b>$150.00</b></div>
+                            <div className="grid-item" id='i1'>Product</div>
+                            <div className="grid-item" id='i2'>Anadrol 50mg Bottle of 100 × 2</div>
+                            <div className="grid-item" id='i3'>Subtotal</div>
+                            <div className="grid-item" id='i4'>$130.00</div>
+                            <div className="grid-item" id='i5'>Subtotal</div>
+                            <div className="grid-item" id='i6'>$130.00</div>
+                            <div className="grid-item" id='i7'>Shipping</div>
+                            <div className="grid-item" id='i8'>USPS Fast Shipping: <b>20$</b> <span>USPS Priority Mail</span></div>
+                            <div className="grid-item" id='i9'>Total</div>
+                            <div className="grid-item" id='i10'><b>$150.00</b></div>
                         </div>
                     </div>
                     <div className='additional-info-holder'>
-                        <h2>Additional Information</h2>
+                        <h1>Additional Information</h1>
                         <label htmlFor="additional-info-input">Order Notes (optional)</label>
                         <input type="text" id='additional-info-input' placeholder='Notes about your order, e.g. special notes for delivery.'/>
                     </div>
                     <div className='coupon-holder'>
                         <span>Have a coupon? <a href='#'>Click here to enter your coupon!</a></span>
                     </div>
-                    <div className='hidden-div' style={{visibility: "hidden"}}></div>
                     <div className='crypto-submit-holder'>
                         <div className='crypto'>
                             <input type="radio" id='bitcoin'/>
@@ -64,7 +63,7 @@ export const Checkout = () => {
                             <input type="radio" id='other'/>
                             <label htmlFor="other">Other</label>
                         </div>
-                        <button id='submit-order-button' onClick={console.log("click")}>Submit Order</button>
+                        <button id='submit-order-button' onClick={() => console.log("click")}>Submit Order</button>
                     </div>
                 </form>
             </div>

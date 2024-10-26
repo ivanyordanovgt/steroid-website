@@ -3,10 +3,12 @@
   align-items: center;
   justify-content: center;
   width: 70%;
-  margin-left: 15%;
 }
 
 .arrow-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 80%;
   background-color: #e5e0ff;
   gap: 10px;

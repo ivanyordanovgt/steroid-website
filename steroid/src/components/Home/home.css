@@ -5,8 +5,6 @@
         linear-gradient(90deg, transparent, transparent calc(100% - 2px), #7b5ff55d calc(100% - 2px), #7b5ff5 100%); /* Vertical lines with 2px border */
     background-size: 120px 100px; /* Size of the rectangles */
     background-position: 0 13vh; /* Start the grid from the bottom of .title */
-    width: 93%;
-    margin-left: 3.5%;
     height: calc(140vh - 13vh); /* Adjust height to not overlap .title */
     margin-top: 0;
     padding: 0;
@@ -23,7 +21,6 @@
     top: 0; /* Start sticking when it reaches the top */
     z-index: 1000; /* Ensure it stays above other elements when sticking */
     width: 93%;
-    margin-left: 3.5%;
     height: 13vh;
 
 }
@@ -43,6 +40,10 @@
 .title img {
     margin-top: 5vh;
     margin-left: 3vw;
+}
+
+.home {
+    width: 93%;
 }
 
 .home .header .content img {

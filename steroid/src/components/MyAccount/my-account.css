@@ -73,7 +73,8 @@
 }
 /* Content area */
 .my-account-container .content {
-    padding: 20px;
+    padding-left: 1em;
+    padding-top: 0.25m;
     width: 100%;
     background-color: #f9f9f9;
     border-radius: 0 15px 15px 0;
@@ -213,9 +214,9 @@
     align-items: center;  
     background-color: #cad8f1;;
     border-radius: 15px;
-    padding: 0 4vw;
+    padding-left: 4vw;
     height: 8vh;
-    width: 100%;
+    width: 90%;
 }
 
 #add-payment-button{    

@@ -1,20 +1,25 @@
+.checkout-container{
+    margin-top: 6vh;
+    width: 93%;
+}
+
 .checkout-container .title-span{
     font-size: 3em;
     font-weight: 900;
     color: #372580;
     text-align: center;
-    margin-bottom: 2vh;
-    margin-left: 6%;
-    padding-top: 2vh;
+    margin-left: 8%;
 }
 
+/*TODO: FIX ALIGNEMT, PADDING*/
 #details-form {
-    width: 98%;
-    margin-left: 5%;
-    margin-right: 3.5%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    column-gap: 1em;
+    row-gap: 2em;
+    width: 100%;
+    margin: auto;
 }
 
 #details-form div{
@@ -24,45 +29,71 @@
 }
 
 #details-form .details-holder{
+    grid-column: 1;
+    grid-row: 1;
     padding: 1em;
 }
 
-#details-form .details-holder, .order-holder, .additional-info-holder, .coupon-holder, .crypto-submit-holder, .hidden-div{
-    margin: 2%;
-    width: 40%;
-    border: 1px solid lightgray;
+#details-form .additional-info-holder{
+    grid-column: 1;
+    grid-row: 2 / span 2;
+    padding-top: 1em;
+}
+
+#details-form .order-holder{
+    grid-column: 2;
+    grid-row: 1;
+    height: auto;
 }
 
 #details-form .coupon-holder{
+    grid-column: 2;
+    grid-row: 2;
     height: 6vh;
     text-align: center;
-    padding: 3vh;
+    padding: 3vh 0;
+}
+
+#details-form .crypto-submit-holder{
+    grid-column: 2;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#details-form .details-holder, .additional-info-holder, .order-holder, .coupon-holder, .crypto-submit-holder{
+    width: 95%;
+    border: 1px solid lightgray;
+    padding: 1em;
+}
+
+#details-form .order-holder, .coupon-holder, .crypto-submit-holder{
+    margin-right: 1px;
 }
 
 #submit-order-button{
     transition: 0.4s;
     background-color: #6b4cf8;
-    margin-left: 1%;
     color: white;
     font-size: calc(.55vw + .55em);
     font-weight: 400;
     border: none;
     border-radius: 10px;
     align-items: flex-start;
-    height: 5vh;
-    width: 12vw;
+    height: 6vh;
+    width: 90%;
+    align-content: center;
 }
 
 #submit-order-button:hover{
     transition: 0.4s;
-    background-color: #a18cff;
-    color: #8003ce;
-    width: 12.5vw;
-    
+    background-color: white;
+    border: 1px solid #2f00ff;
+    color: #6b4cf8;
 }
+
 #details-form .details-holder, .additional-info-holder{
-    margin-left: 1em;
-    padding: 1em;
     display: flex;
     flex-direction: column;
 }
@@ -92,11 +123,7 @@
 }
 
 #details-form  h1{
-    padding: 1em;
-}
-
-#details-form h2{
-    padding-left: 1em;
+    padding-left: 0.5em;
 }
 
 #details-form .order-holder .order-grid {

@@ -39,65 +39,67 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
   
     
   return (
-    <div class='check-cart'>
+    <div className='check-cart'>
         <h1>Cart</h1>
-        <div className='cart-products' style={{marginTop: '1vh'}}>
-            <div className='cart-header'>
-                <h2 style={{marginLeft: '1vw'}}>Product</h2>
-                <h3> </h3>
-                <h2>Price</h2>
-                <h2>Quantity</h2>
-                <h2>Subtotal</h2>
-            </div>
-            {shoppingCartItems.map((item) => {
-                return <div className='cart-product'>
-                <h1 onClick={() => removeItemFromCart(item.id)}><span>×</span></h1>
-                <img src={testImageUrl}></img>
-                <h2><span>{item.title}</span></h2>  
-                <div className='space-between-title'></div>
-                <h2>${item.price}</h2>
-                <input
-                type="number"
-                id="quantity"
-                name="quantity"
-                min="1"
-                max="10"
-                step="1"
-                value={item.count}
-                onChange={(e) => handleQuantityChange(e, item)} // Pass the event and item correctly
-                /><h2>${item.price}</h2>
-                </div>
-            })}
-        </div>     
-        <div className='check-cart-checkout'>
-          <h1 id='title'>Card Totals</h1>
+        <div className='grid-container'>
+          <div className='cart-products'>
+              <div className='cart-header'>
+                  <h2 style={{marginLeft: '1vw'}}>Product</h2>
+                  <h3> </h3>
+                  <h2>Price</h2>
+                  <h2>Quantity</h2>
+                  <h2>Subtotal</h2>
+              </div>
+              {shoppingCartItems.map((item) => {
+                  return <div className='cart-product'>
+                  <h1 onClick={() => removeItemFromCart(item.id)}><span>×</span></h1>
+                  <img src={testImageUrl} alt='item-image'></img>
+                  <h2><span>{item.title}</span></h2>  
+                  <div className='space-between-title'></div>
+                  <h2>${item.price}</h2>
+                  <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  min="1"
+                  max="10"
+                  step="1"
+                  value={item.count}
+                  onChange={(e) => handleQuantityChange(e, item)} // Pass the event and item correctly
+                  /><h2>${item.price}</h2>
+                  </div>
+              })}
+          </div>     
+          <div className='check-cart-checkout'>
+            <h1 id='title'>Card Totals</h1>
 
-          <div className='header'>
-            <h2>Subtotal</h2>
-            <h3>${calcPriceTotal()}.00</h3>
-          </div>
-
-          <div className='shipping'>
-            <h2>Shipping</h2>
-            <div>
-              <h4>ECONT Fast shipping: $5.00</h4>
-              <h4>Shipping to: <span>Sofia</span></h4>
-              <a href='#'>Change address</a>
+            <div className='header'>
+              <h2>Subtotal</h2>
+              <h3>${calcPriceTotal()}.00</h3>
             </div>
 
+            <div className='shipping'>
+              <h2>Shipping</h2>
+              <div>
+                <h4>ECONT Fast shipping: $5.00</h4>
+                <h4>Shipping to: <span>Sofia</span></h4>
+                <a href='#'>Change address</a>
+              </div>
+
+            </div>
+
+            <div className='total'>
+              <h2>Total</h2>
+              <h3>${calcPriceTotal()+5}.00</h3>
+            </div>
+
+          <button>Procceed to checkout</button>
           </div>
 
-          <div className='total'>
-            <h2>Total</h2>
-            <h3>${calcPriceTotal()+5}.00</h3>
+          <div className='coupon-input'>
+              <input placeholder='Coupon code'></input>
+              <button>Apply coupon</button>
           </div>
-
-        <button>Procceed to checkout</button>
-        </div>
-
-        <div className='coupon-input' style={{marginTop: `${40+12*(shoppingCartItems.length-1)}vh`}}>
-            <input placeholder='Coupon code'></input>
-            <button>Apply coupon</button>
         </div>
     </div>
   )
