@@ -15,7 +15,7 @@ const Home = () => {
         {title: "bulk discounts", text: "We provide discounts for orders of 3+ kits – the more you buy, the more you save.", imgUrl: imgUrls['discount']}
     ];
 
-    const pCreate = (perIU, price, title, text) => {return {price, title, text, perIU}};
+    const pCreate = (perIU, price, title, text) => {return {price: Number(price), title, text, perIU}};
     const products = [
         pCreate('0.71', '115.00', 'Generostim Standard | J', 'AVG 103.56 IU | 97%+ PURITY | 0 DIMER'),
         pCreate('0.78', '220.00', 'Generostim Supreme | G', 'AVG 280.2 IU | 97.5%+ PURITY | 0 DIMER'),

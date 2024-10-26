@@ -8,6 +8,7 @@ import { ShopProducts } from "./components/Home/ShopProducts";
 import { Contact } from "./components/Contact";
 import { MyAccount } from "./components/MyAccount/MyAccount";
 import { Checkout } from "./components/Checkout/Checkout"
+import shopCartIMG from './shop_icon_2.png'
 function App() {
   const [shoppingCartItems, setShoppingCartItems] = useState([]);
 
@@ -38,15 +39,13 @@ function App() {
           </div>
           <a href="/"><img src='https://kits4less.com/wp-content/uploads/2023/10/k4l_logo_white.svg' alt="Logo" /></a>
         </div>
-
-        <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/products" element={<ShopProducts addToCart={addToCart}/>} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/check-cart" element={<CheckCart shoppingCartItems={shoppingCartItems}/>} />
-          <Route path="/checkout" element={<Checkout/>}/>
-          <Route path="/my-account" element={<MyAccount accountProps={userData}/>}></Route>
-
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/products" element={<ShopProducts addToCart={addToCart}/>} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/check-cart" element={<CheckCart shoppingCartItems={shoppingCartItems} setShoppingCartItems={setShoppingCartItems}/>} />
+        <Route path="/checkout" element={<Checkout/>}/>
+        <Route path="/my-account" element={<MyAccount accountProps={userData}/>}></Route>
         </Routes>
 
         <h1>Footer</h1>

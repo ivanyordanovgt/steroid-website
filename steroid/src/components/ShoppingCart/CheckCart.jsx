@@ -7,6 +7,7 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
   const testImageUrl = 'https://kits4less.com/wp-content/uploads/2024/05/standard-closed.png';
 
   const [quantity, setQuantity] = useState(1); // Initial quantity set to 1
+  const [couponCodeInput, setCouponCodeInput] = useState('');
 
   const handleQuantityChange = (e, item) => {
     const newQuantity = parseInt(e.target.value, 10); // Get the new quantity from input
@@ -35,6 +36,21 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
   function removeItemFromCart(id) {
     const updatedCart = shoppingCartItems.filter(item => item.id !== id);
     setShoppingCartItems(updatedCart);
+  }
+
+  function applyCoupon(e) {
+    const result = [];
+    for (let item of shoppingCartItems) {
+      if (item.allowedCoupon && item.allowedCoupon.text === couponCodeInput) {
+         item.isFilterApplied = true;
+         item.couponReduces = (item.price*item.allowedCoupon.percentage)/100;
+         item.price = item.price - item.couponReduces;
+        };
+      
+        result.push(item);
+    }
+
+    setShoppingCartItems(result);
   }
   
     
@@ -77,7 +93,6 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
               <h2>Subtotal</h2>
               <h3>${calcPriceTotal()}.00</h3>
             </div>
-
             <div className='shipping'>
               <h2>Shipping</h2>
               <div>
@@ -85,14 +100,12 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
                 <h4>Shipping to: <span>Sofia</span></h4>
                 <a href='#'>Change address</a>
               </div>
-
             </div>
 
             <div className='total'>
               <h2>Total</h2>
               <h3>${calcPriceTotal()+5}.00</h3>
             </div>
-
           <button>Procceed to checkout</button>
           </div>
 
@@ -100,6 +113,12 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
               <input placeholder='Coupon code'></input>
               <button>Apply coupon</button>
           </div>
+        <button>Procceed to checkout</button>
+        </div>
+
+        <div className='coupon-input' style={{marginTop: `${40+13*(shoppingCartItems.length-1)}vh`}}>
+            <input placeholder='Coupon code' value={couponCodeInput} onChange={(e) => setCouponCodeInput(e.target.value)}></input>
+            <button onClick={applyCoupon}>Apply coupon</button>
         </div>
     </div>
   )
