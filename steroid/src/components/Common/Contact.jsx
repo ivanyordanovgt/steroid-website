@@ -1,3 +1,5 @@
+import "./common.css";
+
 import React from 'react'
 
 export const Contact = () => {

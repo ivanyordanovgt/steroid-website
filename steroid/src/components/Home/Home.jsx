@@ -31,7 +31,7 @@ const Home = () => {
     
     <div className='content'>
         <img src='https://kits4less.com/wp-content/uploads/2024/08/image-1.png' alt='logo'></img>
-        <div class='text'>
+        <div className='text'>
                 
             <h1>
                 #1 US Source <span>for</span>
@@ -50,7 +50,7 @@ const Home = () => {
     <div className="info-boxes">
       {infoText.map((item, index) => (
         <div key={index} className="info-box">
-          <div class='box-title'>
+          <div className='box-title'>
             <img src={item.imgUrl} alt={item.title} className="info-box-img" />
             <h3>{item.title}</h3>
           </div>

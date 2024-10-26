@@ -3,7 +3,7 @@ import React from 'react'
 const Addresses = ({showContent}) => {
   return (
     
-    <div id="addresses" class="content-section">
+    <div id="addresses" className="content-section">
         <div className="wrapper">
             <span>The following addresses will be used on the checkout page by default.</span>
             <h1>Billing address</h1>
