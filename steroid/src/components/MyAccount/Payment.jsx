@@ -14,7 +14,7 @@ const Payment = ({showContent}) => {
 
   return (
                        
-    <div id="payment" class="content-section" >
+    <div id="payment" className="content-section" >
         <div className="wrapper" id='payment-wrapper'>
           <span id='payment-span'>No saved payment methods found.</span>
           <br></br>

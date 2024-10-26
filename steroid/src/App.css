@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-
+.app-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
 
 .top-message {
   background-color: #e8dcfc;
   height: 6.5vh;
+  width: 100%;
   position: relative;
 }
 

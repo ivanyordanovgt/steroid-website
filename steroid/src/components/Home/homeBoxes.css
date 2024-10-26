@@ -1,7 +1,7 @@
 .info-boxes {
     display: flex; /* Use flexbox to align items in a row */
+    justify-content: space-between;
     gap: 3vw; /* Adds 5vw space between the boxes */
-    margin-left: 5vw;
     margin-top: 5vh;
 
   }

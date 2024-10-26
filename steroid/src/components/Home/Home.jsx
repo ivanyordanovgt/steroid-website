@@ -25,11 +25,11 @@ const Home = () => {
     ]
 
   return (
-    <div class='home'>
+    <div className='home'>
     
     <div className='header'>
     
-    <div class='content'>
+    <div className='content'>
         <img src='https://kits4less.com/wp-content/uploads/2024/08/image-1.png' alt='logo'></img>
         <div class='text'>
                 
@@ -63,8 +63,8 @@ const Home = () => {
     
     <ProductsList products={products} titleLabel={'Featured products'}/>
 
-    <div class='about'>
-      <div class='content'>
+    <div className='about'>
+      <div className='content'>
         <img src='https://kits4less.com/wp-content/uploads/2023/11/about_icon.svg'></img>
         <h1>About us</h1>
         <p><span>Kits4Less</span> is a <span>USA</span> 

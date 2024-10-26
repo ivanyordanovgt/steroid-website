@@ -13,16 +13,16 @@ export const Checkout = () => {
                         <div className='name-holder'>
                             <div className='first-name-holder'>
                                 <label htmlFor='first-name-input'>First Name *</label>
-                                <input type='text' id='first-name-input'></input>
+                                <input type='text' id='first-name-input' placeholder='John'></input>
                             </div>
                             <div className='last-name-holder'>
                                 <label htmlFor='last-name-input'>Last Name *</label>
-                                <input type='text' id='last-name-input'></input>
+                                <input type='text' id='last-name-input' placeholder='Doe'></input>
                             </div>
                         </div>
                         <label htmlFor="company-name-input">Company Name (optional)</label>
-                        <input type="text" id='first-name-input' placeholder='Company Name'/>
-                        <label htmlFor="country-region-input">Country *</label>
+                        <input type="text" id='company-name-input' placeholder='Company Name'/>
+                        <label htmlFor="country-input">Country *</label>
                         <input type="text" id='country-input' placeholder='Country'/>
                         <label htmlFor="state-input">County *</label>
                         <input type="text" id="state-input" placeholder='County'/>
@@ -35,7 +35,18 @@ export const Checkout = () => {
                     </div>
                     <div className='order-holder'>
                         <h1>Your Order</h1>
-                        
+                        <div className='order-grid'>
+                            <div className="grid-item" id='i1'>Product</div>
+                            <div className="grid-item" id='i2'>Anadrol 50mg Bottle of 100 × 2</div>
+                            <div className="grid-item" id='i3'>Subtotal</div>
+                            <div className="grid-item" id='i4'>$130.00</div>
+                            <div className="grid-item" id='i5'>Subtotal</div>
+                            <div className="grid-item" id='i6'>$130.00</div>
+                            <div className="grid-item" id='i7'>Shipping</div>
+                            <div className="grid-item" id='i8'>USPS Fast Shipping: <b>20$</b> <span>USPS Priority Mail</span></div>
+                            <div className="grid-item" id='i9'>Total</div>
+                            <div className="grid-item" id='i10'><b>$150.00</b></div>
+                        </div>
                     </div>
                     <div className='additional-info-holder'>
                         <h1>Additional Information</h1>
@@ -52,7 +63,7 @@ export const Checkout = () => {
                             <input type="radio" id='other'/>
                             <label htmlFor="other">Other</label>
                         </div>
-                        <button id='submit-order-button' onClick={console.log("click")}>Submit Order</button>
+                        <button id='submit-order-button' onClick={() => console.log("click")}>Submit Order</button>
                     </div>
                 </form>
             </div>

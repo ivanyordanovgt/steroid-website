@@ -4,7 +4,7 @@ const ProductsList = ({products, titleLabel, addToCart}) => {
     const testImageUrl = 'https://kits4less.com/wp-content/uploads/2024/05/standard-closed.png';
 
   return (
-    <div class="products">
+    <div className="products">
         <h4>{titleLabel}</h4>
         <div className="product-grid">
       {products.map((product, index) => (

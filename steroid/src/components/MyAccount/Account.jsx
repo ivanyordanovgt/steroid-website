@@ -14,7 +14,7 @@ export const Account = ({showContent}) => {
   // }
   return (
                 
-    <div id="account" class="content-section">
+    <div id="account" className="content-section">
       <div className="wrapper">
         <form action='#' onSubmit="#">
             <div className='name-holder'>
