@@ -3,7 +3,7 @@ import './check-cart.css'
 import myImage from '../../17.PNG'
 
 export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
-    const totalPrice = 335;
+  const totalPrice = 335;
   const testImageUrl = 'https://kits4less.com/wp-content/uploads/2024/05/standard-closed.png';
 
   const [quantity, setQuantity] = useState(1); // Initial quantity set to 1
@@ -72,18 +72,20 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
                   <img src={testImageUrl} alt='item-image'></img>
                   <h2><span>{item.title}</span></h2>  
                   <div className='space-between-title'></div>
-                  <h2>${item.price}</h2>
-                  <input
-                  type="number"
-                  id="quantity"
-                  name="quantity"
-                  min="1"
-                  max="10"
-                  step="1"
-                  value={item.count}
-                  onChange={(e) => handleQuantityChange(e, item)} // Pass the event and item correctly
-                  /><h2>${item.price}</h2>
-                  </div>
+                  <h2>
+                  {item.isFilterApplied===false ? <>${item?.price.toFixed(2)}</>: <><span style={{textDecoration: 'line-through', float: 'left'}}>${(item.price+Number(item.couponReduces || 0)).toFixed(2)}</span> ${item?.price.toFixed(2)}</>}
+                  </h2>
+                <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                max="10"
+                step="1"
+                value={item.count}
+                onChange={(e) => handleQuantityChange(e, item)} // Pass the event and item correctly
+                /><h2>${item.price*item.count.toFixed(2)}</h2>
+                </div>
               })}
           </div>     
           <div className='check-cart-checkout'>
@@ -91,7 +93,7 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
 
             <div className='header'>
               <h2>Subtotal</h2>
-              <h3>${calcPriceTotal()}.00</h3>
+              <h3>${calcPriceTotal().toFixed(2)}</h3>
             </div>
             <div className='shipping'>
               <h2>Shipping</h2>
@@ -103,22 +105,16 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
             </div>
 
             <div className='total'>
-              <h2>Total</h2>
-              <h3>${calcPriceTotal()+5}.00</h3>
-            </div>
+            <h2>Total</h2>
+            <h3 >${(calcPriceTotal()+5).toFixed(2)}</h3>
+          </div>
           <button>Procceed to checkout</button>
           </div>
 
           <div className='coupon-input'>
-              <input placeholder='Coupon code'></input>
-              <button>Apply coupon</button>
-          </div>
-        <button>Procceed to checkout</button>
-        </div>
-
-        <div className='coupon-input' style={{marginTop: `${40+13*(shoppingCartItems.length-1)}vh`}}>
             <input placeholder='Coupon code' value={couponCodeInput} onChange={(e) => setCouponCodeInput(e.target.value)}></input>
             <button onClick={applyCoupon}>Apply coupon</button>
+          </div>
         </div>
     </div>
   )
