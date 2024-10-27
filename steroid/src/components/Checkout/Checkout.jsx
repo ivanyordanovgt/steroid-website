@@ -1,9 +1,24 @@
-import {React} from 'react'
+import {React} from 'react';
 import {useForm} from 'react-hook-form';
-import "./checkout.css"
+import {z} from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import "./checkout.css";
 
 export const Checkout = () => {
-    const {register, handleSubmit, formState: {errors, isSubmitting}} = useForm();
+    const checkoutSchema = z.object({
+        firstName: z.string(),
+        lastName: z.string(),
+        companyName: z.string(),
+        country: z.string(),
+        county: z.string(),
+        postCode: z.string().length(4, {message: "Please enter a valid Post code!"}),
+        streetAddress: z.string(),
+        email: z.string().email()
+    })
+
+    const {register, handleSubmit, formState: {errors, isSubmitting}} = useForm({
+        resolver: zodResolver(checkoutSchema)
+    });
     
     const onSubmit = (formData) => {
 
@@ -20,7 +35,6 @@ export const Checkout = () => {
                             <div className='first-name-holder'>
                                 <label htmlFor='first-name-input'>First Name *</label>
                                 <input {...register("firstName", {
-                                    required: "First name is required!",
                                 })} type='text' id='first-name-input' placeholder='John'></input>
                                 {errors.firstName && (
                                     <div style={{color: "red"}}>{errors.firstName.message}</div>
@@ -29,7 +43,6 @@ export const Checkout = () => {
                             <div className='last-name-holder'>
                                 <label htmlFor='last-name-input'>Last Name *</label>
                                 <input {...register("lastName", {
-                                    required: "Last name is required!",
                                     })} type='text' id='last-name-input' placeholder='Doe'></input>            
                                 {errors.lastName && (
                                     <div style={{color: "red"}}>{errors.lastName.message}</div>
@@ -43,14 +56,12 @@ export const Checkout = () => {
                                 )}
                         <label htmlFor="country-input">Country *</label>
                         <input {...register("country", {
-                                    required: "Country is required!",
                                     })} type="text" id='country-input' placeholder='Country'/>
                                     {errors.country && (
                                         <div style={{color: "red"}}>{errors.country.message}</div>
                                     )}
                         <label htmlFor="state-input">County *</label>
                         <input {...register("county", {
-                                    required: "County is required!",
                                     })} type="text" id="state-input" placeholder='County'/>
                                     {errors.county && (
                                         <div style={{color: "red"}}>{errors.county.message}</div>
@@ -63,24 +74,12 @@ export const Checkout = () => {
                                         <div style={{color: "red"}}>{errors.streetAddress.message}</div>
                                     )}
                         <label htmlFor="post-code-input">Post Code *</label>
-                        <input {...register("postCode", {
-                                    required: "Post code is required!",
-                                    minLength: 4,
-                                    maxLength: 4})} type="number" id='post-code-input'/>
+                        <input {...register("postCode")} type="text" id='post-code-input'/>
                                     {errors.postCode && (
                                         <div style={{color: "red"}}>{errors.postCode.message}</div>
                                     )}
                         <label htmlFor="email-input">Email *</label>
-                        <input {...register("email", {
-                                    required: "Email is required!",
-                                    pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                                    validate: (value) => {
-                                        if(!value.includes("@")){
-                                            return "Email must contain '@'!";
-                                        }
-                                        return true;
-                                    },
-                                    })} type="email" id='email-input' placeholder='Email'/>
+                        <input {...register("email")} type="email" id='email-input' placeholder='Email'/>
                                     {errors.email && (
                                         <div style={{color: "red"}}>{errors.email.message}</div>
                                     )}
@@ -122,5 +121,3 @@ export const Checkout = () => {
         </div>
     )
 }
-
-export default Checkout

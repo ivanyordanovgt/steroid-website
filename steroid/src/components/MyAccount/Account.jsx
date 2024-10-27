@@ -1,12 +1,30 @@
-import {React} from 'react'
-import {useForm, submitHandler} from 'react-hook-form'
+import {React} from 'react';
+import{z} from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import {useForm, submitHandler} from 'react-hook-form';
 
 export const Account = ({showContent}) => {
-  const {register, handleSubmit, formState: {errors, isSubmitting}} = useForm();
+  const accountSchema = z.object({
+    firstName: z.string(),
+    lastName: z.string(),
+    displayName: z.string(),
+    email: z.string().email(),
+    currentPassword: z.string(),
+    newPassword: z.string()
+    .min(8, { message: "New password must be at least 8 characters" })
+    .regex(/[A-Z]/, { message: "Password must contain at least one uppercase letter" })
+    .regex(/[a-z]/, { message: "Password must contain at least one lowercase letter" })
+    .regex(/[0-9]/, { message: "Password must contain at least one number" }),
+    confirmPassword: z.string()
+  }).refine((data) => data.newPassword === data.confirmPassword, {
+    message: "Passwords do not match",
+    path: ["confirmPassword"]
+  })
 
-  function checkEmail(value) {
+  const {register, handleSubmit, formState: {errors, isSubmitting}} = useForm({
+    resolver: zodResolver(accountSchema)
+  });
 
-  }
   //submitHandler
   const onSubmit = (formData) => {
 
@@ -20,18 +38,14 @@ export const Account = ({showContent}) => {
             <div className='name-holder'>
               <div className='first-name-holder'>
                 <label htmlFor='first-name-input'>First Name *</label>
-                <input {...register("firstName", {
-                  required: "First name is required!"
-                })} type='text' id='first-name-input'></input>
+                <input {...register("firstName")} type='text' id='first-name-input'></input>
                 {errors.firstName && (
                     <div style={{color: "red"}}>{errors.firstName.message}</div>
                 )}
               </div>
               <div className='last-name-holder'>
                 <label htmlFor='last-name-input'>Last Name *</label>
-                <input {...register("lastName", {
-                  required: "Last name is required!"
-                })} type='text' id='last-name-input'></input>
+                <input {...register("lastName")} type='text' id='last-name-input'></input>
                 {errors.lastName && (
                     <div style={{color: "red"}}>{errors.lastName.message}</div>
                 )}
@@ -46,44 +60,23 @@ export const Account = ({showContent}) => {
                 )}
             <span id='form-span-1'>(This will be how your name will be displayed in the account section and in reviews)</span>
             <label htmlFor='email-input'>Email *</label>
-            <input {...register("email", {
-                  required: "Email name is required!",
-                  validate: (value) => {
-                    if(!value.includes('@')){
-                      return "Email must contain '@'!";
-                    }
-                    return true;
-                  },
-                  pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-                })} type='email' id='email-input'></input>
+            <input {...register("email")} type='email' id='email-input'></input>
                 {errors.email && (
                     <div style={{color: "red"}}>{errors.email.message}</div>
                 )}
             <span id='form-span-2'>Password Changes</span>
             <label htmlFor='current-password-input'>Current password (leave blank to leave unchanged)</label>
-            <input {...register("currentPassword", {
-                  required: "Please enter your old password!",
-                })} type="password" id='current-password-input'/>
+            <input {...register("currentPassword")} type="password" id='current-password-input'/>
                 {errors.currentPassword && (
                     <div style={{color: "red"}}>{errors.currentPassword.message}</div>
                 )}
             <label htmlFor='new-password-input'>New password (leave blank to leave unchanged)</label>
-            <input {...register("newPassword", {
-                  required: "Please enter your new password!",
-                  pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-                  minLength: {
-                    value: 8,
-                    message: "New password must have at least 8 characters!"
-                  }
-                })} type="password" id='new-password-input'/>
+            <input {...register("newPassword")} type="password" id='new-password-input'/>
                 {errors.newPassword && (
                     <div style={{color: "red"}}>{errors.newPassword.message}</div>
                 )}
             <label htmlFor='confirm-password-input'>Confirm new password</label>
-            <input {...register("confirmPassword", {
-                  required: "Please re-enter your new password!",
-                  pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
-                })} type="password" id='confirm-password-input'/>
+            <input {...register("confirmPassword")} type="password" id='confirm-password-input'/>
                 {errors.confirmPassword && (
                     <div style={{color: "red"}}>{errors.confirmPassword.message}</div>
                 )}
