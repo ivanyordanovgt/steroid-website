@@ -32,6 +32,7 @@ export const Account = ({showContent}) => {
 
   return (
                 
+                /* TODO: Implement users*/
     <div id="account" className="content-section">
       <div className="wrapper">
         <form action='#' onSubmit={handleSubmit(onSubmit)}>

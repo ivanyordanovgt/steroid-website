@@ -1,16 +1,136 @@
 .register-container, .login-container {
     display: flex;
     flex-direction: column;
+    width: 40%;
+    margin: 5vh;
+    border: 2px outset #a18cff;
+    border-radius: 25px;
+    padding: 1em;
 }
 
-.login-container .login-form{
+.login-container .login-form, .register-container .register-form{
     display: flex;
     flex-direction: column;
     padding: 1em;
+}
+
+.login-container .login-form .submit-holder{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.login-container .login-form .submit-holder .checkbox-holder{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1em;
+    width: 45%;
+}
+
+.login-container .login-form .submit-holder .checkbox-holder label{
+    margin: 0 0 0 0.5vw;
+    font-size: Larger;
+    color: darkgrey;
+}
+
+.register-container .register-form .promotions-checkbox-holder input{
+    height: 20px;
+    width: 20px;
+}
+
+.register-container .register-form .submit-holder .checkbox-holder label{
+    margin: 0 0 0 0.5vw;
+    font-size: Larger;
+    color: darkgrey;
+}
+
+.register-container .register-form .submit-holder .checkbox-holder input{
+    height: 20px;
+    width: 20px;
 }
 
 .register-container .register-form{
     display: flex;
     flex-direction: column;
     padding: 1em;
+}
+
+.register-container form label, .login-container form label{
+    font-size: 14px;
+    margin-top: 15px;
+    font-size: large;
+}
+
+.register-container form input, .login-container form input{
+    font-size: 14px;
+    padding: 1em;
+    border: none;
+    background-color: #f3edfd;
+    border-radius: 10px;
+}
+
+.register-container form .promotions-checkbox-holder{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1em;
+    width: 100%;
+}
+
+.register-container form .promotions-checkbox-holder label{
+    margin-left: 0.5em;
+    color: darkgray;
+}
+
+#login-button, #register-button{
+    transition: 0.4s;
+    background-color: #6b4cf8;
+    margin-left: 1%;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 400;
+    border: none;
+    border-radius: 10px;
+    height: 6vh;
+    width: 45%;
+    margin-top: 1em;
+}
+
+#register-button{
+    margin-top: 0.5em;
+}
+
+#login-button:hover, #register-button:hover{
+    transition: 0.4s;
+    background-color: #a18cff;
+    color: #8003ce;
+}
+
+#register-forgot-password-span{
+    margin-left: 3em;
+    color: darkgray;
+}
+
+#register-forgot-password-span a{
+    text-decoration: none;
+    color: #a18cff;
+}
+
+#register-forgot-password-span a:hover{
+    text-decoration: none;
+    color: #8003ce;
+}
+
+#promotions-checkbox{
+    margin-top: 15px;
+}
+
+#register-message{
+    margin-top: 2em;
+}
+
+#remember-me-checkbox{
+    width: 20px;
+    height: 20px;
 }

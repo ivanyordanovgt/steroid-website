@@ -27,6 +27,7 @@ export const Register = () => {
     }
 
     const checkUsernameAvailability = async (username) => {
+        /* TODO: Implement users*/
         const takenUsernames = ['testUser'];
         return !takenUsernames.includes(username);
     }
@@ -44,9 +45,11 @@ export const Register = () => {
                 {errors.password && (
                     <div style={{color: "red"}}>{errors.password.message}</div>
                 )}
-                <input type="checkbox" id='promotions-checkbox'/>
-                <label htmlFor="promotions-checkbox">Notify me about sales, promotions, and announcements (optional)</label>
-                <span>Registration confirmation will be emailed to you.</span>
+               <div className='promotions-checkbox-holder'>
+                    <input type="checkbox" id='promotions-checkbox'/>
+                    <label htmlFor="promotions-checkbox">Notify me about sales, promotions, and announcements (optional)</label>
+               </div>
+                <span id='register-message'>Registration confirmation will be emailed to you.</span>
                 <button type='submit' id='register-button' disabled={isSubmitting}>{isSubmitting ? "Registering..." : "Register"}</button>
             </form>
         </div>
