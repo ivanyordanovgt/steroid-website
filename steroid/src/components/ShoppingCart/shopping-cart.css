@@ -2,6 +2,7 @@
   position: relative; /* Keep this for positioning */
   display: inline-block; /* Keep it inline with nav items */
   border: none;
+  margin: 0.3em;
 }
 
 .cart-toggle {
@@ -117,6 +118,7 @@
 
 
 .shopping-cart .checkout-buttons button {
+  transition: 0.3s;
   width: 10vw;
   height: 7vh;
   background-color: transparent;
@@ -129,7 +131,9 @@
 }
 
 .shopping-cart .checkout-buttons button:hover {
+  transition: 0.3s;
   background-color: #9d87ff;
+  cursor: pointer;
 }
 
 .shopping-cart .checkout-buttons .checkout {

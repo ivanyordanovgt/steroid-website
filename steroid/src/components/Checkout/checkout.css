@@ -117,6 +117,14 @@
     border-radius: 10px;
 }
 
+#details-form input:focus{
+    outline: none; /* Removes the default outline */
+    border-color: #6200ea; /* Changes border color */
+    box-shadow: 0 0 5px rgba(98, 0, 234, 0.5); /* Adds a subtle shadow */
+    background-color: #f3e5f5; /* Light purple background */
+    color: #4b0089; /* Text color */
+}
+
 #details-form label{
     font-size: 14px;
     margin-top: 15px;

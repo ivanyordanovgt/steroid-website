@@ -71,6 +71,7 @@
   }
 
   .product-details button {
+    transition: 0.3s;
     background-color: #6b4cf8;
     width: 98%;
     margin-left: 1%;

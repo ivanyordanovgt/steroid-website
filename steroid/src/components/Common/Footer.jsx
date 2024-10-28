@@ -3,7 +3,7 @@ import "./common.css";
 export const Footer = () => {
     return(
         <footer className="footer-container">
-            <nav>
+            <nav className="footer-nav">
                 <div className='nav-holder'>
                     <ul className="nav">
                         <li><a href='/products'>Shop products</a></li>

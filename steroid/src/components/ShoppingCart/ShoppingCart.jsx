@@ -77,7 +77,7 @@ export const ShoppingCart = ({ cartItems, setShoppingCartItems }) => {
 
               <div className='checkout-buttons'>
                 <button onClick={onViewCartHandler}> View cart</button>
-                <button className='checkout'> Checkout </button>
+                <button onClick={() => navigate('/checkout')} className='checkout'> Checkout </button>
               </div>
             </div>
         ) : (

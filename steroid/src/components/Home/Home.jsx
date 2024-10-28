@@ -4,6 +4,7 @@ import './homeBoxes.css'
 import './product.css'
 import ArrowMenu from '../arrowMenu/arrowMenu'
 import ProductsList from './ProductsList'
+import { useNavigate } from 'react-router-dom';
 const Home = () => {
     const imgUrls = {'lab': 'https://kits4less.com/wp-content/uploads/2023/11/testing-icon.svg',
         'shipping': 'https://kits4less.com/wp-content/uploads/2023/11/shipping-icon.svg',
@@ -15,6 +16,7 @@ const Home = () => {
         {title: "bulk discounts", text: "We provide discounts for orders of 3+ kits – the more you buy, the more you save.", imgUrl: imgUrls['discount']}
     ];
 
+    const navigate = useNavigate();
     const pCreate = (perIU, price, title, text) => {return {price: Number(price), title, text, perIU}};
     const products = [
         pCreate('0.71', '115.00', 'Generostim Standard | J', 'AVG 103.56 IU | 97%+ PURITY | 0 DIMER'),
@@ -39,7 +41,7 @@ const Home = () => {
                 Affordable HGH, PEPTIDES & MORE - <span>backed by HPLC Testing</span>
             </h1>
 
-            <button>Shop now</button>
+            <button onClick={() => navigate('/products')}>Shop now</button>
             <a href='#'>View lab results</a>
         </div>
     </div>

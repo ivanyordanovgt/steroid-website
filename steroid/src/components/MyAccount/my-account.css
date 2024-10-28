@@ -3,7 +3,6 @@
     flex-direction: column;
     width: 93%;
     align-content: space-around;
-    margin-left: 3.5%;
     margin-top: 5vh;
 }
 
@@ -68,13 +67,11 @@
 .my-account-container .sidebar #dashboard{
     border-radius: 15px 0 0 0;
 }
-.my-account-container .sidebar #logout{
 
-}
 /* Content area */
 .my-account-container .content {
     padding-left: 1em;
-    padding-top: 0.25m;
+    padding-top: 0.25em;
     width: 100%;
     background-color: #f9f9f9;
     border-radius: 0 15px 15px 0;
@@ -133,8 +130,15 @@
     padding: 15px;
     border: none;
     background-color: #f3edfd;
+    border-radius: 10px;
 }
-
+#account .wrapper form input:focus{
+    outline: none; /* Removes the default outline */
+    border-color: #6200ea; /* Changes border color */
+    box-shadow: 0 0 5px rgba(98, 0, 234, 0.5); /* Adds a subtle shadow */
+    background-color: #f3e5f5; /* Light purple background */
+    color: #4b0089; /* Text color */
+}
 #account .wrapper form label{
     font-size: 14px;
     margin-top: 15px;
@@ -241,11 +245,61 @@
 }
 
   /* Optional: Responsive Design */
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
 
-  }
+}
   
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
+    .my-account-container .main-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-  }
+    .my-account-container .main-content .sidebar{
+        width: 90%;
+        border-radius: 15px 15px 15px 15px;
+    }
+
+    .my-account-container .main-content .sidebar ul li{
+        height: 4vh;
+    }
+    .my-account-container .title-span{
+        font-size: 2em;
+    }
+
+    .my-account-container .content{
+        margin-top: 5vh;
+    }
+    .my-account-container .content .content-section .wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    .my-account-container .content .content-section #payment-wrapper {
+        align-items: center;
+    }
+
+    .my-account-container .content .content-section #orders-wrapper {
+        flex-direction: row;
+    }
+
+    .my-account-container .content .content-section #orders-wrapper button{
+        width: 20vw;
+    }
+
+    .my-account-container .content .content-section #account-wrapper button{
+        width: 30vw;
+        font-size: 1em;
+    }
+
+    .my-account-container .content .content-section .wrapper p a{
+        background-color: #cad8f1;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    #add-payment-button{
+        width: 30vw;
+    }
+}
   

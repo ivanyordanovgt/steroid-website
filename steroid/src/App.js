@@ -33,12 +33,17 @@ function App() {
 
         <div className='title'>
           <div className='nav'>
-            <a href='/products'>Shop products</a>
-            <a href='#'>Quality control</a>
-            <a href='#'>Verify</a>
-            <a href='#'>Help Centre</a>
-            <a href='/my-account'>My account</a>
-            <ShoppingCart cartItems={shoppingCartItems} setShoppingCartItems={setShoppingCartItems}/> {/* Corrected prop usage */}
+              <nav className="header-nav">
+                  <ul className="nav-list">
+                      <li><a href='/products'>Shop Products</a></li>
+                      <li><a href='#'>Quality Control</a></li>
+                      <li><a href='#'>Verify</a></li>
+                      <li><a href='#'>Help Centre</a></li>
+                      <li><a href='/my-account'>My Account</a></li>
+                  </ul>
+                </nav>
+                <ShoppingCart cartItems={shoppingCartItems} setShoppingCartItems={setShoppingCartItems}/> {/* Corrected prop usage */}
+                <button class="hamburger" onclick="toggleMenu()">☰</button>
           </div>
           <a href="/"><img src='https://kits4less.com/wp-content/uploads/2023/10/k4l_logo_white.svg' alt="Logo" /></a>
         </div>

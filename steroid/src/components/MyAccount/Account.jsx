@@ -34,7 +34,7 @@ export const Account = ({showContent}) => {
                 
                 /* TODO: Implement users*/
     <div id="account" className="content-section">
-      <div className="wrapper">
+      <div className="wrapper" id='account-wrapper'>
         <form action='#' onSubmit={handleSubmit(onSubmit)}>
             <div className='name-holder'>
               <div className='first-name-holder'>
