@@ -68,6 +68,16 @@
     border-radius: 15px 0 0 0;
 }
 
+.dashboard-link{
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.dashboard-link:hover, #add-billing-address-link:hover{
+    transition: 0.3s;
+    color: #a18cff;
+}
+
 /* Content area */
 .my-account-container .content {
     padding-left: 1em;
@@ -196,6 +206,7 @@
     transition: 0.4s;
     background-color: #a18cff;
     color: #8003ce;
+    border: 1.5px solid #6601a4;
     width: 12.5vw;
     
 }
@@ -300,6 +311,10 @@
 
     #add-payment-button{
         width: 30vw;
+    }
+
+    #dashboard .wrapper p a{
+        padding: 0;
     }
 }
   

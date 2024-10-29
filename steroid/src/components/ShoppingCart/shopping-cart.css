@@ -6,12 +6,19 @@
 }
 
 .cart-toggle {
+  transition: 0.3s;
   cursor: pointer;
   background-color: #7051f4;
   margin-left: 10px; /* Space between nav items */
   border: none;
   position: relative; /* Change to relative to adjust its position */
   top: 10px; /* Move it down */
+  border-radius: 10px;
+}
+
+.cart-toggle:hover{
+  transition: 0.3s;
+  background-color: #ac9aff;
 }
 
 .cart-toggle img {

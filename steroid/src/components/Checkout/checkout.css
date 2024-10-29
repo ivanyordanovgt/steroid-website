@@ -187,3 +187,10 @@ margin: 10px 0;
 display: block;
 font-size: 0.9em;
 }
+
+@media (max-width: 480px){
+    #details-form{
+        display: flex;
+        flex-direction: column;
+    }
+}

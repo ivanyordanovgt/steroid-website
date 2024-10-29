@@ -152,6 +152,14 @@
     padding-left: 1vw;
 }
 
+.coupon-input input:focus{
+    outline: none; /* Removes the default outline */
+    border-color: #6200ea; /* Changes border color */
+    box-shadow: 0 0 5px rgba(98, 0, 234, 0.5); /* Adds a subtle shadow */
+    background-color: #f3e5f5; /* Light purple background */
+    color: #4b0089; /* Text color */
+}
+
 .coupon-input:focus{
     
     outline: none; /* Removes the default outline */
@@ -266,4 +274,15 @@
 .coupon-input button:hover {
     background-color: #4219f71a;
     transition: 0.3s;
+}
+
+@media (max-width: 480px){
+    .check-cart .grid-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .check-cart-checkout, .cart-products, .coupon-input{
+        width: 93%;
+    }
 }
