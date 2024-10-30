@@ -52,8 +52,9 @@
 }
 
 .my-account-container .sidebar ul li:hover {
-    transition: 0.4s;
+    transition: 0.3s;
     cursor: pointer;
+    background-color: #d0c7ff;
 }
 
 
@@ -62,6 +63,10 @@
     background-color: #7a49db;
     color: #573d8a;
     color: white;
+}
+
+.my-account-container .sidebar .hovered:hover {
+    background-color: #7a49db;
 }
 
 .my-account-container .sidebar #dashboard{
@@ -273,8 +278,15 @@
     }
 
     .my-account-container .main-content .sidebar ul li{
+        transition: 0.3s;
         height: 4vh;
     }
+
+    .my-account-container .main-content .sidebar ul li:hover{
+        transition: 0.3s;
+        background-color: #a18cff;
+    }
+
     .my-account-container .title-span{
         font-size: 2em;
     }
