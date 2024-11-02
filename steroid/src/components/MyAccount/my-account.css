@@ -47,8 +47,17 @@
     font-weight: bold;
     text-align: center;
     justify-content: center;
-    color: #7152ad;
     transition: 0.4s;
+}
+
+
+.my-account-container .sidebar ul li{
+    text-decoration: none;
+    color: #7152ad;
+}
+
+.my-account-container .sidebar ul a{
+    text-decoration: none;
 }
 
 .my-account-container .sidebar ul li:hover {
@@ -57,16 +66,18 @@
     background-color: #d0c7ff;
 }
 
+.my-account-container .sidebar .hovered {
+    background-color: #6b4cf8;
+}
 
 .my-account-container .sidebar .hovered {
     transition: 0.4s;
-    background-color: #7a49db;
-    color: #573d8a;
     color: white;
+    text-decoration: none;
 }
 
 .my-account-container .sidebar .hovered:hover {
-    background-color: #7a49db;
+    background-color: #7d3cff;
 }
 
 .my-account-container .sidebar #dashboard{
@@ -165,6 +176,12 @@
     justify-content: flex-start;
 }
 
+.card-credentials-holder{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
 .content #orders-wrapper{
     height: 6;
 }
@@ -260,6 +277,29 @@
     color: rgba(67, 4, 150, 0.699);
 }
 
+#save-address-button{
+    transition: 0.4s;
+    background-color: #6b4cf8;
+    margin-left: 1%;
+    color: white;
+    font-size: calc(.55vw + .55em);
+    font-weight: 400;
+    border: none;
+    border-radius: 10px;
+    align-items: flex-start;
+    height: 5vh;
+    width: 12vw;
+}
+
+#save-address-button:hover{
+    transition: 0.4s;
+    background-color: #a18cff;
+    color: #8003ce;
+    border: 1.5px solid #6601a4;
+    width: 12.5vw;
+    
+}
+
   /* Optional: Responsive Design */
 @media (max-width: 768px) {
 
@@ -277,7 +317,7 @@
         border-radius: 15px 15px 15px 15px;
     }
 
-    .my-account-container .main-content .sidebar ul li{
+    .my-account-container .main-content .sidebar ul li a{
         transition: 0.3s;
         height: 4vh;
     }

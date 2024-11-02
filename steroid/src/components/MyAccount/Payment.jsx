@@ -1,28 +1,33 @@
 import {React, useState} from 'react'
+import AddPayment from './AddPayment';
+import PaymentMethods from './PaymentMethods';
 
-const Payment = ({showContent}) => {
-  const [paymentMethods, setPaymentMethods] = useState([]);
-  const [displayContent, setDisplayContent] = useState("none");
-  const [displayButton, setDisplayButton] = useState("box");
+const Payment = ({paymentProps}) => {
+  const [paymentSection, setPaymentSection] = useState('payment-methods');
+  const [paymentMethods, setPaymentMethods] = useState(paymentProps);
   
-  const handleAddPayment = (p) => {
-    setPaymentMethods(paymentMethods, [...paymentMethods, p]);
+  const showPaymentForm = () => {
+    setPaymentSection('add-payment');
   }
-  const handleChangeDisplay = () => {
 
+  const handleSaveForm = (newPayment) => {
+    setPaymentSection('payment-methods');
+    setPaymentMethods([...paymentMethods, newPayment]);
+  }
+
+  const handleCancel = () => {
+    setPaymentSection('payment-methods');
   }
 
   return (
                        
     <div id="payment" className="content-section" >
-        <div className="wrapper" id='payment-wrapper'>
-          <span id='payment-span'>No saved payment methods found.</span>
-          <br></br>
-          <button className={displayButton} id='add-payment-button' onClick={handleChangeDisplay}>Add payment method</button>
-          <div className={displayContent}></div>
-        </div>
+      {paymentSection === 'payment-methods' ? (
+        <PaymentMethods paymentProps={paymentMethods} onAddPaymentClick={showPaymentForm}/>
+      ) : (
+        <AddPayment onSave={handleSaveForm} onCancel={handleCancel}/>
+      )}
     </div>
   )
 }
-
 export default Payment

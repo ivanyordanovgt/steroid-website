@@ -1,9 +1,9 @@
 import {React} from 'react';
 import{z} from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import {useForm, submitHandler} from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 
-export const Account = ({showContent}) => {
+ const Account = () => {
   const accountSchema = z.object({
     firstName: z.string(),
     lastName: z.string(),
@@ -89,5 +89,4 @@ export const Account = ({showContent}) => {
     </div>
   )
 }
-
 export default Account

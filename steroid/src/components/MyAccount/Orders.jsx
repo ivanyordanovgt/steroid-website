@@ -1,9 +1,7 @@
 import React from 'react'
-import { redirect } from 'react-router-dom';
 
-const Orders = ({showContent}) => {
+const Orders = () => {
   return (
-    
     <div id="orders" className="content-section">
         <div className='wrapper' id='orders-wrapper'>
             <span>No orders have been made yet!</span>
@@ -12,5 +10,4 @@ const Orders = ({showContent}) => {
     </div>
   )
 }
-
 export default Orders
