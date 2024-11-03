@@ -158,3 +158,28 @@
     width: 20px;
     height: 20px;
 }
+
+@media (max-width: 480px){
+    .register-container, .login-container {
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+        margin: 5vh;
+        border: 2px outset #a18cff;
+        border-radius: 25px;
+        padding: 1em;
+    }
+
+    
+    #register-forgot-password-span{
+        margin-left: 0;
+    }
+
+    .checkbox-holder{
+        min-width: 60%;
+    }
+
+    #login-button{
+        min-width: 35%;
+    }
+}

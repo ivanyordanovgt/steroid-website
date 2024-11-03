@@ -58,6 +58,7 @@
 
 .my-account-container .sidebar ul a{
     text-decoration: none;
+    color: #7152ad;
 }
 
 .my-account-container .sidebar ul li:hover {
@@ -87,6 +88,14 @@
 .dashboard-link{
     transition: 0.3s;
     text-decoration: none;
+}
+
+.dashboard-link:hover, #add-billing-address-link{
+    transition: 0.3s;
+    color: #4b0089;
+    background-color: #e9f0ff;
+    border-radius: 15px;
+    padding: 5px;
 }
 
 .dashboard-link:hover, #add-billing-address-link:hover{
@@ -277,6 +286,30 @@
     color: rgba(67, 4, 150, 0.699);
 }
 
+#save-payment-button{
+    transition: 0.4s;
+    background-color: #6b4cf8;
+    margin-left: 1%;
+    color: white;
+    font-size: calc(.55vw + .55em);
+    font-weight: 400;
+    border: none;
+    border-radius: 10px;
+    align-items: flex-start;
+    height: 5vh;
+    width: 12vw;
+
+}
+
+#save-payment-button:hover{
+    
+    transition: 0.4s;
+    background-color: #a18cff;
+    color: #8003ce;
+    border: 1.5px solid #6601a4;
+    width: 12.5vw;
+}
+
 #save-address-button{
     transition: 0.4s;
     background-color: #6b4cf8;
@@ -333,6 +366,7 @@
 
     .my-account-container .content{
         margin-top: 5vh;
+        padding-left: 0;
     }
     .my-account-container .content .content-section .wrapper{
         display: flex;
@@ -367,6 +401,22 @@
 
     #dashboard .wrapper p a{
         padding: 0;
+    }
+
+    #save-address-button {
+        width: 30vw;
+    }
+
+    #save-address-button:hover{
+        width: 35vw;
+    }
+
+    #save-payment-button{
+        font-size: 1em;
+        width: 30vw;
+    }
+    #save-payment-button:hover{
+        width: 35vw;
     }
 }
   
