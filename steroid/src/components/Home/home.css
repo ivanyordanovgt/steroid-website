@@ -152,6 +152,46 @@
 
 @media (max-width: 480px){
 
+    .home .header{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 80vh;
+    }
+
+    .home .header .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .home .header .content img{
+        margin-top: 10vh;
+        position: relative;
+    }
+
+    .home .header .content .text{
+        width: 93%;
+        position: relative;
+        margin-top: 5vh;
+        padding: 0 0 2em 2em;
+    }
+
+    .home .header .content .text h1{
+        width: 93%;
+    }
+
+    .home .header .content .text a{
+        font-size: 1.5em;
+    }
+
+    .home .header .content .text button{
+        width: 25vw;
+        font-size: 1em;
+        margin-right: 5vw;
+    }
+
     .title{
         display: flex;
         flex-direction: column;
@@ -230,5 +270,9 @@
     
     .title .mobile-nav.active ul li a{
         text-decoration: none;
+    }
+
+    .info-boxes{
+        flex-direction: column;
     }
 }
