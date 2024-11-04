@@ -6,7 +6,14 @@ const BillingAddresses = ({addressProps, onAddAddressClick}) => {
 
     return(
         <div className="addresses-content">
-            <span>The following addresses will be used on the checkout page by default.</span>
+            {addressProps && addressProps.length > 0 ? (    
+                <ul className='orders-list'>
+                {addressProps.map((address, index) => {
+                  return <li key={index}><a href='#'>{address}</a></li>})}
+                </ul>
+            ) : (
+                <span>The following addresses will be used on the checkout page by default.</span>
+            )}
             <h1>Billing address</h1>
             <p><a id='add-billing-address-link' onClick={onAddAddressClick}>Add Billing address</a></p>
             <h2 id='address-h2'>You have not set up any addresses as of yet.</h2>
