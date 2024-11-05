@@ -28,6 +28,7 @@
     background-color: #372580;
     font-size: calc(.22vw + .22em);
     width: 6.6vw;
+    min-width: 60px;
     height: 4.5vh;
     color: white;
     border-radius: 0 .7vw .7vw 0;
@@ -115,7 +116,56 @@
     font-size: 0.9em;
     color: #666;
   }
+
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.075);
+    z-index: 1000;
+  }
   
+  /* Content inside the popup */
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    width: 50vw;
+    height: 50vh;
+    text-align: center;
+  }
+  
+  .product button:hover {
+    background-color: #8b70ff;
+    cursor: pointer;
+  }
+  
+  #close-popup{
+    transition: 0.3s;
+    background-color: #6b4cf8;
+    width: 98%;
+    margin-left: 1%;
+    height: 5vh;
+    color: white;
+    font-size: calc(.55vw + .55em);
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    margin-top: 2.5vh
+  }
+
+  #close-popup:hover{
+    background-color: #8b70ff;
+    cursor: pointer;
+  }
+
   /* Optional: Responsive Design */
   @media (max-width: 768px) {
     .product {
@@ -125,12 +175,16 @@
   
   @media (max-width: 480px) {
     .product {
-      width: 100%; /* 1 item per row on very small screens */
+      width: 100%;
+    } /* 1 item per row on very small screens */
+    
+    .popup-content {
+      width: 80%;           /* Increase width for small screens */
+      padding: 15px;        /* Reduce padding */
+      font-size: 0.9rem;    /* Optional: Adjust font size for readability */
+    }
+
+    #close-popup{
+      font-size: 1.5rem;
     }
   }
-
-  .product button:hover {
-    background-color: #8b70ff;
-    cursor: pointer;
-  }
-  

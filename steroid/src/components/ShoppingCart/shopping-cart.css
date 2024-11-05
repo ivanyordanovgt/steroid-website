@@ -41,6 +41,7 @@
 
 .cart-panel.open {
   display: block; /* Show when open */
+  padding-left: 15px;
 }
 
 .cart-items {
