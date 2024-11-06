@@ -7,10 +7,11 @@ import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import { ShopProducts } from "./components/Home/ShopProducts";
 import { Contact } from "./components/Common/Contact";
 import { Footer } from "./components/Common/Footer";
-import  {MyAccount}  from "./components/MyAccount/MyAccount";
+import { MyAccount } from "./components/MyAccount/MyAccount";
 import { Checkout } from "./components/Checkout/Checkout";
 import { Login } from "./components/User/Login";
 import { Register } from "./components/User/Register";
+import { ProductDetails } from "./components/Home/ProductDetails";
 import shopCartIMG from './shop_icon_2.png';
 
 export const UserContext = createContext();
@@ -18,7 +19,7 @@ export const UserContext = createContext();
 function App() {
   const [shoppingCartItems, setShoppingCartItems] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [users, setUser] = useState([]);
+  const [users, setUsers] = useState([]);
 
   const addToCart = (item) => {
     setShoppingCartItems((prevItems) => [...prevItems, item]);
@@ -34,6 +35,10 @@ function App() {
     orders: [],
     addresses: [],
     payment: []
+  }
+
+  const productsData = {
+    '1': "yes"
   }
 
   return (
@@ -85,7 +90,8 @@ function App() {
             <Route path="/my-account" element={<MyAccount accountProps={userData}/>}></Route>
             <Route path="/login" element={<Login/>}></Route>
             <Route path="/register" element={<Register/>}></Route>
-          </Routes>
+            <Route path="/products/:id" element={<ProductDetails product={productsData} addToCart={addToCart}/>}></Route>
+          </Routes> 
           <Footer></Footer>
         </div>
       </Router>
