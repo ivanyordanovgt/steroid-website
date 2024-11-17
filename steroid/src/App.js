@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import './App.css';
 import Home from "./components/Home/Home";
@@ -18,7 +18,7 @@ export const UserContext = createContext();
 function App() {
   const [shoppingCartItems, setShoppingCartItems] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [users, setUser] = useState([]);
+  const [user, setUser] = useState(undefined);
 
   const addToCart = (item) => {
     setShoppingCartItems((prevItems) => [...prevItems, item]);
@@ -28,7 +28,26 @@ function App() {
     setMenuOpen((prev) => !prev);
 }
 
+  const getUser = async () => {
+    try {
+      const res = await fetch("https://progkitten.pythonanywhere.com/users/profile", {
+        method: "GET",
+        credentials: 'same-origin'
+      });
+      const resJSON = res.json();
+      setUser(resJSON)
+      console.log(`---> SET USER: `, res)
+    } catch (err) {
+      console.log(`---< ERROR: `, err)
+      return undefined
+    }
+  }
+
   // const userData = db.get('user/data')
+  useEffect(() => {
+    const userResponse = getUser();
+
+  }, [])
   const userData = {
     user: 'testUser', 
     orders: [],
@@ -37,7 +56,7 @@ function App() {
   }
 
   return (
-    <UserContext.Provider value={users}>
+    <UserContext.Provider value={user}>
         <Router>
         <div className="app-container">
           <div className='top-message'>
@@ -60,7 +79,7 @@ function App() {
                           <li><a href='#'>Quality Control</a></li>
                           <li><a href='#'>Verify</a></li>
                           <li><a href='#'>Help Centre</a></li>
-                          <li><a href='/my-account'>My Account</a></li>
+                          <li><a href='/my-account'>{user?.email ? "My Account": "Login/Register"}</a></li>
                       </ul>
                   </nav>
               </div>
@@ -71,7 +90,7 @@ function App() {
                         <li><a href='#'>Quality Control</a></li>
                         <li><a href='#'>Verify</a></li>
                         <li><a href='#'>Help Centre</a></li>
-                        <li><a href='/my-account'>My Account</a></li>
+                        <li><a href='/my-account'>{user ? "My Account": "Login/Register"}</a></li>
                     </ul>
             </nav>
             

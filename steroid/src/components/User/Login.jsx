@@ -2,53 +2,37 @@ import './user.css'
 import {z} from "zod"
 import {zodResolver} from '@hookform/resolvers/zod'
 import {useForm} from 'react-hook-form'
+import { postUserData } from '../../core/userReq'
+import { useNavigate } from 'react-router-dom'
 
 export const Login = () => {
     const usernameRegex = /^[a-zA-Z0-9]{3,}$/
+    const navigate = useNavigate();
+    const checkUserCredentials = (email, password) => {
 
-    const checkUserCredentials = (identifier, password) => {
-        const validUsers = [
-            {
-                /* TODO: Implement users*/
-                username: "testUser",
-                email: "user@test.com",
-                password: "Mitaka99"
-            }]
-
-        const user = validUsers.find((u) => u.username === identifier || u.email === identifier);
-
-        if(!user){
-            return { success: false, error: "identifier" }; 
-        }
-
-        if (user.password !== password) {
-            return { success: false, error: "password" }; // Password incorrect
-          }
-
-        return { success: true };
     }
 
     const loginSchema = z.object({
-        identifier: z.string()
+        email: z.string()
         .min(1, {message: "Username or email is required!"})
-        .refine((val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val) || /^[a-zA-Z0-9_]{3,}$/.test(val), {
+        .refine((val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val), {
             message: "Must be a valid username or email",
           }),
 
         password: z.string()
         .min(1, {message: "Password is required!"})
     }).superRefine(async (data, ctx) => {
-        const {identifier, passsword} = data;
-        const result = await checkUserCredentials(identifier, passsword);
-        if(result.error === "identifier"){
+        const {email, passsword} = data;
+        const result = await checkUserCredentials(email, passsword);
+        if(result?.error === "email"){
             ctx.addIssue({
                 code: "custom",
                 message: "Incorrect username or email!",
-                path: ["identifier"], // Show error on identifier field
+                path: ["email"], // Show error on email field
             })
         }
         /*TODO: Check if this is working properly with real users*/
-        else if(result.error === "password"){
+        else if(result?.error === "password"){
             ctx.addIssue({
                 code: "custom",
                 message: "Incorrect password!",
@@ -64,15 +48,18 @@ export const Login = () => {
 
     const onSubmit = (data) => {
         console.log(data);
+        const url = "https://progkitten.pythonanywhere.com/users/login"
+        postUserData(data, url, '/products', navigate)
+
     }
     
     return(
         <div className='login-container'>
             <form action="" onSubmit={handleSubmit(onSubmit)} className='login-form'>
                 <label htmlFor="username-email-input">Username or email address</label>
-                <input {...register("identifier")} type="text" id='username-email-input'/>
-                {errors.identifier && (
-                    <div style={{color: "red"}}>{errors.identifier.message}</div>
+                <input {...register("email")} type="text" id='username-email-input'/>
+                {errors.email && (
+                    <div style={{color: "red"}}>{errors.email.message}</div>
                 )}
                 <label htmlFor="password-input">Password</label>
                 <input {...register('password')} type="password" id='password-input'/>

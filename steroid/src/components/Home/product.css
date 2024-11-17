@@ -38,6 +38,7 @@
     padding-left: 0.5vw;
     height: 1px;
     margin-top: 7px;
+    height: 2vh;
 }
   
   .product {
@@ -107,7 +108,7 @@
     font-size: 1.1em;
     margin: 0;
     margin-bottom: 10px;
-    min-height: 5em;
+    min-height: 10vh;
   }
   
   .product-text {

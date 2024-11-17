@@ -2,9 +2,13 @@ import { useForm } from 'react-hook-form'
 import {zodResolver} from "@hookform/resolvers/zod"
 import { z } from 'zod'
 import './user.css'
+import {useNavigate } from 'react-router-dom'
+import { postUserData } from '../../core/userReq'
 
 export const Register = () => {
+    const navigate = useNavigate();
     const registerSchema = z.object({
+        email: z.string().email(),
         username: z.string()
         .min(1, {message: "Please enter an username!"})
         .min(3, {message: "Username must be at least 3 characters long!"})
@@ -22,8 +26,12 @@ export const Register = () => {
         resolver: zodResolver(registerSchema)
     });
 
+
+      
+
     const onSubmit = async (data) => {
-        console.log(data);
+        const url = "https://progkitten.pythonanywhere.com/users/register"
+        console.log(postUserData(data, url, '/login'), navigate)
     }
 
     const checkUsernameAvailability = async (username) => {
@@ -35,6 +43,12 @@ export const Register = () => {
     return(
         <div className='register-container'>
             <form action="" onSubmit={handleSubmit(onSubmit)} className='register-form'>
+                <label htmlFor='email-input'>Email *</label>
+                <input {...register("email")} type='email' id='email-input'></input>
+                    {errors.email && (
+                        <div style={{color: "red"}}>{errors.email.message}</div>
+                    )}
+
                 <label htmlFor="username-input">Username</label>
                 <input {...register("username")} type="text" id='username-input'/>
                 {errors.username && (
@@ -45,6 +59,7 @@ export const Register = () => {
                 {errors.password && (
                     <div style={{color: "red"}}>{errors.password.message}</div>
                 )}
+                
                <div className='promotions-checkbox-holder'>
                     <input type="checkbox" id='promotions-checkbox'/>
                     <label htmlFor="promotions-checkbox">Notify me about sales, promotions, and announcements (optional)</label>
