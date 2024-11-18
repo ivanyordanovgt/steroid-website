@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './check-cart.css'
-import myImage from '../../17.PNG'
 import { useNavigate } from 'react-router-dom';
 
 export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {

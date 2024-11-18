@@ -132,6 +132,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/products/:id" element={<ProductDetails product={productsData} addToCart={addToCart} />} />
+            <Route path="*" element={<div>Page Not Found</div>} />
+
           </Routes>
           <Footer />
         </div>
