@@ -15,6 +15,7 @@
   text-align: center;
   margin-left: 10%;
   padding-top: 5vh;
+  padding-bottom: 5vh;
 }
 
 .arrow-menu img {
@@ -46,3 +47,8 @@
 .arrow-menu .menu-container p {
 }
 
+@media (max-width: 480px){
+  .arrow-menu{
+    height: 70vh;
+  }
+}

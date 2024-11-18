@@ -10,9 +10,7 @@ export const Checkout = () => {
         lastName: z.string(),
         companyName: z.string(),
         country: z.string(),
-        county: z.string(),
         postCode: z.string().length(4, {message: "Please enter a valid Post code!"}),
-        streetAddress: z.string(),
         email: z.string().email()
     })
 
@@ -20,9 +18,37 @@ export const Checkout = () => {
         resolver: zodResolver(checkoutSchema)
     });
     
-    const onSubmit = (formData) => {
-
-    }
+    const onSubmit = async (formData) => {
+        console.log('Form Data Submitted:', formData);
+    
+        try {
+            const response = await ffetch('https://progkitten.pythonanywhere.com/orders', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include', // Include cookies/session data
+                body: JSON.stringify({
+                    user_id: 1,
+                    product_id: 42,
+                    quantity: 3,
+                }),
+            });
+            
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error('Error creating order:', errorData);
+                alert(`Error: ${errorData.message}`);
+            } else {
+                const data = await response.json();
+                console.log('Order Created Successfully:', data);
+                alert(`Order created successfully! Order ID: ${data.id}`);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Something went wrong while creating the order.');
+        }
+    };
     return(
         <div className='checkout-container'>
             <span className='title-span'>Checkout</span>
@@ -60,12 +86,7 @@ export const Checkout = () => {
                                     {errors.country && (
                                         <div style={{color: "red"}}>{errors.country.message}</div>
                                     )}
-                        <label htmlFor="state-input">County *</label>
-                        <input {...register("county", {
-                                    })} type="text" id="state-input" placeholder='County'/>
-                                    {errors.county && (
-                                        <div style={{color: "red"}}>{errors.county.message}</div>
-                                    )}
+                       
                         <label htmlFor="street-address-input">Street Address *</label>
                         <input {...register("streetAdress", {
                                     required: "Street address is required!"

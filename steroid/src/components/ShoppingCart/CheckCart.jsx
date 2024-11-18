@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './check-cart.css'
 import myImage from '../../17.PNG'
+import { useNavigate } from 'react-router-dom';
 
 export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
   const totalPrice = 335;
@@ -8,6 +9,7 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
 
   const [quantity, setQuantity] = useState(1); // Initial quantity set to 1
   const [couponCodeInput, setCouponCodeInput] = useState('');
+  const navigate = useNavigate();
 
   const handleQuantityChange = (e, item) => {
     const newQuantity = parseInt(e.target.value, 10); // Get the new quantity from input
@@ -73,7 +75,7 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
                   <h2><span>{item.title}</span></h2>  
                   <div className='space-between-title'></div>
                   <h2>
-                  {item.isFilterApplied===false ? <>${item?.price.toFixed(2)}</>: <><span style={{textDecoration: 'line-through', float: 'left'}}>${(item.price+Number(item.couponReduces || 0)).toFixed(2)}</span> ${item?.price.toFixed(2)}</>}
+                  {true ? <>${item?.price.toFixed(2)}</>: <><span style={{textDecoration: 'line-through', float: 'left'}}>${(item.price+Number(item.couponReduces || 0)).toFixed(2)}</span> ${item?.price.toFixed(2)}</>}
                   </h2>
                 <input
                 type="number"
@@ -84,7 +86,7 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
                 step="1"
                 value={item.count}
                 onChange={(e) => handleQuantityChange(e, item)} // Pass the event and item correctly
-                /><h2>${item.price*item.count.toFixed(2)}</h2>
+                /><h2>${item.price*item.count}</h2>
                 </div>
               })}
           </div>     
@@ -108,7 +110,7 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
             <h2>Total</h2>
             <h3 >${(calcPriceTotal()+5).toFixed(2)}</h3>
           </div>
-          <button>Procceed to checkout</button>
+          <button onClick={() => navigate("/checkout")}>Procceed to checkout</button>
           </div>
 
           <div className='coupon-input'>

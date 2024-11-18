@@ -1,7 +1,9 @@
-import React from 'react'
+import{ React} from 'react'
+import { Link } from "react-router-dom"
 
 const ProductsList = ({products, titleLabel, addToCart}) => {
-    const testImageUrl = 'https://kits4less.com/wp-content/uploads/2024/05/standard-closed.png';
+  const testImageUrl = 'https://kits4less.com/wp-content/uploads/2024/05/standard-closed.png';
+
 
   return (
     <div className="products">
@@ -18,7 +20,8 @@ const ProductsList = ({products, titleLabel, addToCart}) => {
           <div className="product-details">
             <h2>${product.price.toFixed(2)}</h2>
             <h3 className="product-title">{product.title}</h3>
-            <p className="product-text">{product.description}</p>
+            <p className="product-text">{product.text}</p>
+            <Link to={`/products/${product.id}`}><button>View Product</button></Link>
             <button onClick={() => addToCart(product)}>Add to card</button>
           </div>
         </div>
@@ -27,5 +30,6 @@ const ProductsList = ({products, titleLabel, addToCart}) => {
     </div>
   )
 }
+
 
 export default ProductsList

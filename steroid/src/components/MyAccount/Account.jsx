@@ -1,9 +1,14 @@
-import {React} from 'react';
+import {React, useState} from 'react';
 import{z} from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {useForm} from 'react-hook-form';
 
  const Account = () => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [displayName, setDisplayName] = useState('');
+  const [email, setEmail] = useState('');
+
   const accountSchema = z.object({
     firstName: z.string(),
     lastName: z.string(),
@@ -39,29 +44,27 @@ import {useForm} from 'react-hook-form';
             <div className='name-holder'>
               <div className='first-name-holder'>
                 <label htmlFor='first-name-input'>First Name *</label>
-                <input {...register("firstName")} type='text' id='first-name-input'></input>
+                <input {...register("firstName")} type='text' id='first-name-input' value={firstName} onChange={(e) => {setFirstName(e.target.value)}}></input>
                 {errors.firstName && (
                     <div style={{color: "red"}}>{errors.firstName.message}</div>
                 )}
               </div>
               <div className='last-name-holder'>
                 <label htmlFor='last-name-input'>Last Name *</label>
-                <input {...register("lastName")} type='text' id='last-name-input'></input>
+                <input {...register("lastName")} type='text' id='last-name-input'  value={lastName} onChange={(e) => {setLastName(e.target.value)}}></input>
                 {errors.lastName && (
                     <div style={{color: "red"}}>{errors.lastName.message}</div>
                 )}
               </div>
             </div>
             <label htmlFor='display-name-input'>Display Name *</label>
-            <input {...register("displayName", {
-                  required: "Display name is required!"
-                })} type="text" id='display-name-input'></input>
+            <input {...register("displayName",)} type="text" id='display-name-input' value={displayName} onChange={(e) => {setDisplayName(e.target.value)}}></input>
                 {errors.dispayName && (
                     <div style={{color: "red"}}>{errors.displayName.message}</div>
                 )}
             <span id='form-span-1'>(This will be how your name will be displayed in the account section and in reviews)</span>
             <label htmlFor='email-input'>Email *</label>
-            <input {...register("email")} type='email' id='email-input'></input>
+            <input {...register("email")} type='email' id='email-input' value={email} onChange={(e) => {setEmail(e.target.value)}}></input>
                 {errors.email && (
                     <div style={{color: "red"}}>{errors.email.message}</div>
                 )}
