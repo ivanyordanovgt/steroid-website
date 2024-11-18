@@ -22,19 +22,19 @@ export const Checkout = () => {
         console.log('Form Data Submitted:', formData);
     
         try {
-            const response = await ffetch('https://progkitten.pythonanywhere.com/orders', {
+            const response = await fetch('https://progkitten.pythonanywhere.com/orders', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                credentials: 'include', // Include cookies/session data
                 body: JSON.stringify({
-                    user_id: 1,
-                    product_id: 42,
-                    quantity: 3,
+                    user_id: formData.user_id,      // Replace with appropriate user_id
+                    product_id: formData.product_id, // Replace with appropriate product_id
+                    quantity: formData.quantity || 1,
+                    status: 'Pending',               // Optional: specify status
                 }),
             });
-            
+    
             if (!response.ok) {
                 const errorData = await response.json();
                 console.error('Error creating order:', errorData);
