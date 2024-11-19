@@ -22,7 +22,7 @@ const ProductsList = ({products, titleLabel, addToCart}) => {
             <h3 className="product-title">{product.title}</h3>
             <p className="product-text">{product.text}</p>
             <Link to={`/products/${product.id}`}><button>View Product</button></Link>
-            <button onClick={() => addToCart(product)}>Add to card</button>
+            <button onClick={() => addToCart(product)}>Add to Cart</button>
           </div>
         </div>
       ))}
