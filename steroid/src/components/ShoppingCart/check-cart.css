@@ -50,7 +50,8 @@
 .cart-products .cart-product h2 {
     font-size: calc(.5vw + .5em);
     font-weight: 200;
-    margin-left: 2vw;
+    margin-left: 3vw;
+    width: 15vw;
 }
 
 .cart-products .space-between-title {
@@ -98,9 +99,13 @@
     color: rgb(111, 81, 244); /* Text color */
 }
 
+#price-left {
+    margin-left: 3.5vw;
+}
+
 .check-cart .cart-header {
     display: flex; /* Use flexbox for horizontal alignment */
-    margin-left: 8vw;
+    margin-left: 2vw;
 }
 
 .check-cart .cart-header h2 {
@@ -282,7 +287,39 @@
         flex-direction: column;
     }
 
-    .check-cart-checkout, .cart-products, .coupon-input{
-        width: 93%;
+    .check-cart-checkout{
+        width: 89.5%;
+    }
+
+    .check-cart-checkout div{
+        height: 6vh;
+    }
+
+    .cart-products{
+        width: 99.5%;
+    }
+
+    .coupon-input{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 99.5%;
+        height: 10vh;
+    }
+
+    .coupon-input input, .coupon-input button{
+        margin: 0;
+        height: 5vh;;
+    }
+
+    .check-cart .cart-header h2, #price-left {
+        margin-left: 8vw;
+    }
+
+    .check-cart-checkout{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 0 0 5vh 10vw;
     }
 }

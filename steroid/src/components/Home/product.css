@@ -177,9 +177,6 @@
       width: 100%;
     } /* 1 item per row on very small screens */
     
-    .popup{
-    }
-
     .popup-content {
       font-size: 0.9rem;    /* Optional: Adjust font size for readability */
     }

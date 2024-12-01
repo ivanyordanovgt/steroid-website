@@ -63,7 +63,7 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
               <div className='cart-header'>
                   <h2 style={{marginLeft: '1vw'}}>Product</h2>
                   <h3> </h3>
-                  <h2>Price</h2>
+                  <h2 id='price-left'>Price</h2>
                   <h2>Quantity</h2>
                   <h2>Subtotal</h2>
               </div>
@@ -93,8 +93,8 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
             <h1 id='title'>Card Totals</h1>
 
             <div className='header'>
-              <h2>Subtotal</h2>
-              <h3>${calcPriceTotal().toFixed(2)}</h3>
+              <h2>Subtotal:</h2>
+              <h2>${calcPriceTotal().toFixed(2)}</h2>
             </div>
             <div className='shipping'>
               <h2>Shipping</h2>
@@ -106,7 +106,7 @@ export const CheckCart = ({shoppingCartItems, setShoppingCartItems}) => {
             </div>
 
             <div className='total'>
-            <h2>Total</h2>
+            <h3>Total</h3>
             <h3 >${(calcPriceTotal()+5).toFixed(2)}</h3>
           </div>
           <button onClick={() => navigate("/checkout")}>Procceed to checkout</button>
